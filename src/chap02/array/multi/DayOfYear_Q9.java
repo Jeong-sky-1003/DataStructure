@@ -42,6 +42,7 @@ public class DayOfYear_Q9 implements MultiArray{
     }
 
     // 윤년 : 1 , 일반 : 0
+    // 3항
     private int monthOfDayChk(int year){
         return ( year%4 == 0 && year%100 != 0 && year%400 == 0 ) ? 1 : 0;
     }
