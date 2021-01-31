@@ -1,4 +1,6 @@
 import chap02.array.multi.*;
+import chap02.classStructure.ClassStructure;
+import chap02.classStructure.PhyscData;
 import chap02.primeNumber.PrimeNumber;
 import chap02.primeNumber.PrimeNumber2;
 
@@ -6,8 +8,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-        MultiArray array = new DayOfYear_Q9();
-        array.start();
+        ClassStructure classStudy = new PhyscData();
+        classStudy.start();
+
+//        MultiArray array = new DayOfYear_Q9();
+//        array.start();
 
 //        PrimeNumber primeNumber = new PrimeNumber2();
 //        primeNumber.start();
