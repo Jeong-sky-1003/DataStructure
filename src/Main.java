@@ -1,14 +1,17 @@
 import chap02.array.multi.*;
 import chap02.classStructure.ClassStructure;
 import chap02.classStructure.PhyscData;
+import chap02.classStructure.PhyscData_Q10;
+import chap02.classStructure.YMD;
 import chap02.primeNumber.PrimeNumber;
+import chap02.primeNumber.PrimeNumber1;
 import chap02.primeNumber.PrimeNumber2;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        ClassStructure classStudy = new PhyscData();
+        ClassStructure classStudy = new YMD();
         classStudy.start();
 
 //        MultiArray array = new DayOfYear_Q9();
