@@ -128,6 +128,10 @@ public class YMD implements ClassStructure{
 
     public YMD getBefore(int n){
 
+        // 먼저 n이 연단위인지 체크
+        // 연단위일 그만큼 연 마이너스 진행
+        // 이후 나머지 값으로 -y년 전의 m월 d일부터 전일 계산
+
         // 무조건 한 번은 계산해야 하기에 전일로 구하고자 하는 값을 계산할 날짜에서 빼줌
         this.d = this.d - n;
 
