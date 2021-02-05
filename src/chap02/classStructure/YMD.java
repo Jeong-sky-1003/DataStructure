@@ -126,9 +126,20 @@ public class YMD implements ClassStructure{
 
     }
 
+    private YMD getBeforeResult(int n){
+
+        
+
+    }
+
     public YMD getBefore(int n){
 
         // 먼저 n이 연단위인지 체크
+        if( n > 365){
+            this.y -= (n/365);
+            n %= 365;
+            dayListIndex = this.chkLeap(this.y);
+        }
         // 연단위일 그만큼 연 마이너스 진행
         // 이후 나머지 값으로 -y년 전의 m월 d일부터 전일 계산
 
