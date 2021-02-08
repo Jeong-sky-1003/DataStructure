@@ -126,9 +126,10 @@ public class YMD implements ClassStructure{
 
     }
 
+    // 코드 작성 요함
     private YMD getBeforeResult(int n){
 
-        
+        return new YMD(this.y, this.m, this.d);
 
     }
 

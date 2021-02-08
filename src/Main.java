@@ -6,13 +6,18 @@ import chap02.classStructure.YMD;
 import chap02.primeNumber.PrimeNumber;
 import chap02.primeNumber.PrimeNumber1;
 import chap02.primeNumber.PrimeNumber2;
+import chap03.Chapter03;
+import chap03.linearSearch.SeqSearch;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        ClassStructure classStudy = new YMD();
-        classStudy.start();
+        Chapter03 chapter03 = new SeqSearch();
+        chapter03.start();
+
+//        ClassStructure classStudy = new YMD();
+//        classStudy.start();
 
 //        MultiArray array = new DayOfYear_Q9();
 //        array.start();
