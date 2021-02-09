@@ -23,6 +23,11 @@ public class SeqSearch implements Chapter03 {
      */
     private int sentinelMethod(int[] list, int number){
 
+        /*
+            보초랑 보초 적용 안 한 메서드랑 결과 같은 이유는
+            제어문을 잘 활용해서 그런게 아닌가 추측 중
+         */
+
         int count = 0;
         int index = 0;
         // 보초 추가
