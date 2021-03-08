@@ -9,13 +9,19 @@ import chap02.primeNumber.PrimeNumber2;
 import chap03.Chapter03;
 import chap03.binarySearch.BinSearch;
 import chap03.linearSearch.SeqSearch;
+import chap03.queue.IntAryQueue;
+import chap03.queue.IntAryQueueTester;
+import chap03.stack.IntStackTester;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        ClassStructure phy = new PhyscData();
-        phy.start();
+        Chapter03 chapter03 = new IntAryQueueTester();
+        chapter03.start();
+
+//        ClassStructure phy = new PhyscData();
+//        phy.start();
 
 //        Chapter03 chapter03 = new BinSearch();
 //        chapter03.start();
