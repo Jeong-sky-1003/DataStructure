@@ -20,7 +20,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Chap04 chap04 = new Hanoi();
+        Chap04 chap04 = new EightQueen();
         chap04.start();
 
 //        Chapter03 chapter03 = new IntRingBufferQueueTester();
