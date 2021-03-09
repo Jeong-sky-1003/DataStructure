@@ -15,13 +15,25 @@ import chap03.queue.IntRingBufferQueueTester;
 import chap03.stack.IntStackTester;
 import chap04.Chap04;
 import chap04.recursive.*;
+import chap06.Chap06;
+import chap06.sort.BubbleSort;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Chap04 chap04 = new EightQueen();
-        chap04.start();
+        int[][] test = new int[5][3];
+
+        for (int i = 0; i < test.length; i++) {
+            for (int j = 0; j < test[0].length; j++){
+                System.out.printf("%2s", "O");
+            }
+            System.out.println();
+        }
+        System.out.printf("%d, %d", test.length, test[0].length);
+
+//        Chap06 chap06 = new BubbleSort();
+//        chap06.start();
 
 //        Chapter03 chapter03 = new IntRingBufferQueueTester();
 //        chapter03.start();
