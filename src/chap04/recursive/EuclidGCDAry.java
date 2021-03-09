@@ -16,7 +16,6 @@ public class EuclidGCDAry implements Chap04 {
     private int gcd(int x, int y){
 
         // 받아온 요소의 최대공약수 구하기
-        // ex.
         while (y != 0){
             int tmp = y;
             y = x % y;

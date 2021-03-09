@@ -14,15 +14,13 @@ import chap03.queue.IntAryQueueTester;
 import chap03.queue.IntRingBufferQueueTester;
 import chap03.stack.IntStackTester;
 import chap04.Chap04;
-import chap04.recursive.EuclidGCD;
-import chap04.recursive.EuclidGCDAry;
-import chap04.recursive.Factorial;
+import chap04.recursive.*;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Chap04 chap04 = new EuclidGCD();
+        Chap04 chap04 = new Hanoi();
         chap04.start();
 
 //        Chapter03 chapter03 = new IntRingBufferQueueTester();
