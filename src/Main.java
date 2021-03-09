@@ -11,14 +11,22 @@ import chap03.binarySearch.BinSearch;
 import chap03.linearSearch.SeqSearch;
 import chap03.queue.IntAryQueue;
 import chap03.queue.IntAryQueueTester;
+import chap03.queue.IntRingBufferQueueTester;
 import chap03.stack.IntStackTester;
+import chap04.Chap04;
+import chap04.recursive.EuclidGCD;
+import chap04.recursive.EuclidGCDAry;
+import chap04.recursive.Factorial;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Chapter03 chapter03 = new IntAryQueueTester();
-        chapter03.start();
+        Chap04 chap04 = new EuclidGCD();
+        chap04.start();
+
+//        Chapter03 chapter03 = new IntRingBufferQueueTester();
+//        chapter03.start();
 
 //        ClassStructure phy = new PhyscData();
 //        phy.start();
