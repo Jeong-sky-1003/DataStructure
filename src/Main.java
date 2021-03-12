@@ -8,35 +8,44 @@ import chap02.primeNumber.PrimeNumber1;
 import chap02.primeNumber.PrimeNumber2;
 import chap03.Chapter03;
 import chap03.binarySearch.BinSearch;
+import chap03.generic.BoxTest;
+import chap03.generic.PairTest;
 import chap03.linearSearch.SeqSearch;
 import chap03.queue.IntAryQueue;
 import chap03.queue.IntAryQueueTester;
 import chap03.queue.IntRingBufferQueueTester;
+import chap03.section5.MyArrayList;
 import chap03.stack.IntStackTester;
 import chap04.Chap04;
 import chap04.recursive.*;
 import chap06.Chap06;
 import chap06.sort.BubbleSort;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.PriorityQueue;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        int[][] test = new int[5][3];
+//        Chap04 chap04 = new Recursion();
+//        chap04.start();
 
-        for (int i = 0; i < test.length; i++) {
-            for (int j = 0; j < test[0].length; j++){
-                System.out.printf("%2s", "O");
-            }
-            System.out.println();
-        }
-        System.out.printf("%d, %d", test.length, test[0].length);
+//        PriorityQueue<Integer> test = new PriorityQueue<>();
+//        List<int[]> tmp = new ArrayList<>();
+//
+//        int[]t = {1,2};
+//        tmp.add(t);
+//
+//        System.out.println(tmp.get(0)[0]);
+
 
 //        Chap06 chap06 = new BubbleSort();
 //        chap06.start();
 
-//        Chapter03 chapter03 = new IntRingBufferQueueTester();
-//        chapter03.start();
+        Chapter03 chapter03 = new MyArrayList<String>();
+        chapter03.start();
 
 //        ClassStructure phy = new PhyscData();
 //        phy.start();

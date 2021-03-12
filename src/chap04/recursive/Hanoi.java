@@ -4,6 +4,7 @@ import chap03.stack.IntStack;
 import chap04.Chap04;
 
 import java.util.Scanner;
+import java.util.Stack;
 
 public class Hanoi implements Chap04 {
 
@@ -19,6 +20,9 @@ public class Hanoi implements Chap04 {
      *  goal : 이동 목표 기둥
      */
     private void hanoi(int num, int start, int goal){
+
+        Stack<Integer> stkTest = new Stack<>();
+        stkTest.push(0);
 
         // 첫 이동 제어
         // 기둥은 무조건 3개임
@@ -56,7 +60,6 @@ public class Hanoi implements Chap04 {
                 goal = 6 - start - goal;
 
                 System.out.printf("1번 조건 num: %d, chk: %d\n", num, chk);
-
                 continue;
 
             }
@@ -86,7 +89,7 @@ public class Hanoi implements Chap04 {
                 try {
                     start = startStack.pop();
                     goal = goalStack.pop();
-                    chk = chkStack.pop() + 1;   // 의도가 무엇일까
+                    chk = chkStack.pop() + 1;   // 이동 1차 완료되었음 체크
                     System.out.printf("%d번 원반 pop, chk 값 확인: %d\n", num, chk);
                     num++;  // 원판의 갯수 회복
                 } catch (IntStack.EmptyIntStackException e){

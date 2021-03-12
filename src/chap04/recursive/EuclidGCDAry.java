@@ -26,6 +26,7 @@ public class EuclidGCDAry implements Chap04 {
     }
 
     // 배열 요소 받아오기
+    // num: 요소 갯수, start: 시작 번호
     private int gcdArray(int[] array, int start, int num){
         System.out.printf("start: %d, num: %d\n", start, num);
         if (num == 1){

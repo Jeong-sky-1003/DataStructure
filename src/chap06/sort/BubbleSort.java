@@ -21,16 +21,17 @@ public class BubbleSort implements Chap06 {
         for (int i = 0; i < capacity - 1; i++) {
             // 패스
             // 끝부터 앞으로 비교하며 정렬함
-            count++;
             for (int j = capacity - 1; j > i; j--) {
+                count++;
                 if (array[j - 1] > array[j]) {
                     change_count++;
+                    printDetail(array, j, "+");
                     op = "+";
                     swap(array, j - 1, j);
                 } else {
+                    printDetail(array, j, "-");
                     op = "-";
                 }
-                printDetail(array, j, op);
             }
             System.out.println("----------------------------------");
         }
@@ -41,7 +42,7 @@ public class BubbleSort implements Chap06 {
         String op;
         // 앞에서 끝으로 비교하며 정렬함
         for (int i = capacity-1; i > 0; i--){
-            // 한 번 비교한 값이 앞에 위치한 값보다 작을 가능성이 있기에 이중 반복문 진행
+            // 한 번 비교한 값이 앞에 위치한 값보다 작을 가능성이 있기에 이중 반복문
             for (int j = 0; j < i; j++){
                 count++;
                 if (array[j] > array[j+1]){
@@ -89,7 +90,7 @@ public class BubbleSort implements Chap06 {
     private void printDetail(int[] array, int change, String op){
         for (int i=0; i < array.length; i++){
             if (change == i) System.out.printf("%s", op);
-            System.out.printf("%3d %c", array[i]);
+            System.out.printf("%3d", array[i]);
         }
         System.out.println();
     }
