@@ -55,7 +55,7 @@ public class MyArrayList <E> implements Chapter03 {
             theData[i-1] = theData[i];
         }
         size--;
-        
+
         return returnValue;
 
     }

@@ -21,13 +21,49 @@ import chap04.recursive.*;
 import chap06.Chap06;
 import chap06.sort.BubbleSort;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.PriorityQueue;
+import java.io.*;
+import java.util.*;
 
 public class Main {
 
     public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int total = sc.nextInt();
+        int []result = new int[total];
+        BufferedWriter wt = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        try{
+
+            for(int i=0; i<total; i++){
+
+                BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+                String cal_data = reader.readLine();
+
+                int test = Integer.parseInt(reader.readLine());
+
+                StringTokenizer token = new StringTokenizer(cal_data);
+                int a = Integer.parseInt(token.nextToken());
+                int b = Integer.parseInt(token.nextToken());
+
+                if ( a > 1000 || b > 1000) {
+                    i--;
+                    continue;
+                }
+
+                result[i] = a + b;
+
+            }
+
+            for(int i=0; i < result.length; i++){
+                System.out.println(result[i]);
+            }
+
+        } catch(Exception e){
+
+        }
+
 
 //        Chap04 chap04 = new Recursion();
 //        chap04.start();
@@ -43,9 +79,9 @@ public class Main {
 
 //        Chap06 chap06 = new BubbleSort();
 //        chap06.start();
-
-        Chapter03 chapter03 = new MyArrayList<String>();
-        chapter03.start();
+//
+//        Chapter03 chapter03 = new MyArrayList<String>();
+//        chapter03.start();
 
 //        ClassStructure phy = new PhyscData();
 //        phy.start();
