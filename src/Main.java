@@ -1,3 +1,5 @@
+import caseStudy.MyStart;
+import caseStudy.Scheduler;
 import chap02.array.multi.*;
 import chap02.classStructure.ClassStructure;
 import chap02.classStructure.PhyscData;
@@ -28,42 +30,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
-
-        int total = sc.nextInt();
-        int []result = new int[total];
-        BufferedWriter wt = new BufferedWriter(new OutputStreamWriter(System.out));
-
-        try{
-
-            for(int i=0; i<total; i++){
-
-                BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-                String cal_data = reader.readLine();
-
-                int test = Integer.parseInt(reader.readLine());
-
-                StringTokenizer token = new StringTokenizer(cal_data);
-                int a = Integer.parseInt(token.nextToken());
-                int b = Integer.parseInt(token.nextToken());
-
-                if ( a > 1000 || b > 1000) {
-                    i--;
-                    continue;
-                }
-
-                result[i] = a + b;
-
-            }
-
-            for(int i=0; i < result.length; i++){
-                System.out.println(result[i]);
-            }
-
-        } catch(Exception e){
-
-        }
-
+        MyStart myStart = new Scheduler();
+        myStart.start();
 
 //        Chap04 chap04 = new Recursion();
 //        chap04.start();
