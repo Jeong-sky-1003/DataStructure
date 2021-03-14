@@ -1,9 +1,7 @@
-package chap04.recursive;
-
-import chap04.Chap04;
+package inflearn.section2;
 
 // 인프런 강의
-public class Recursion implements Chap04 {
+public class Recursion implements Inflearn {
 
     private void func(int n){
         if(n <= 0) return;

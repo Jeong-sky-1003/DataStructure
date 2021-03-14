@@ -108,7 +108,9 @@ public class Scheduler implements MyStart{
         MyDate deadline = this.setMyDate(dateString);
 
         System.out.print("  title: ");
-        String title = sc.next();
+        // 띄어쓰기를 값으로 받고 싶은 경우 먼저 위 출력 글씨를 개행한 다음 값을 받아야 함
+        sc.next();
+        String title = sc.nextLine();
 
         events.add(new DeadlinedEvent(title, deadline));
 
@@ -128,7 +130,8 @@ public class Scheduler implements MyStart{
         MyDate end = this.setMyDate(end_str);
 
         System.out.print("  title: ");
-        String title = sc.next();
+        sc.next();
+        String title = sc.nextLine();
 
         events.add(new DurationEvent(title, begin, end));
 
@@ -144,7 +147,8 @@ public class Scheduler implements MyStart{
         MyDate myDate = this.setMyDate(dateString);
 
         System.out.print("  title: ");
-        String title = sc.next();
+        sc.next();
+        String title = sc.nextLine();
 
         events.add(new OneDayEvent(title, myDate));
 
