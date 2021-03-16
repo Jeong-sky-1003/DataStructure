@@ -33,7 +33,7 @@ public class Recursion4 implements Inflearn {
     private boolean findMazePath(int x, int y, int n){
 
         // 과정 체크하고 싶을 때 주석 해제하고 체크
-        // printMaze();
+        printMaze();
 
         if ( x < 0 || y < 0 || x >= n || y >= n ){
             // 범위 밖으로 벗어난 경우

@@ -2,6 +2,7 @@ import baekjoon.BackJoon;
 import baekjoon.function.Function1065;
 import baekjoon.function.Function4376;
 import baekjoon.function.Function4673;
+import baekjoon.solveOther.Function2178;
 import caseStudy.MyStart;
 import caseStudy.Scheduler;
 import chap02.array.multi.*;
@@ -38,8 +39,11 @@ public class Main {
 
     public static void main(String[] args){
 
-        Inflearn inflearn = new Recursion4();
-        inflearn.start();
+        BackJoon backJoon = new Function2178();
+        backJoon.start();
+
+//        Inflearn inflearn = new Recursion4();
+//        inflearn.start();
 
     }
 
