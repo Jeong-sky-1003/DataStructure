@@ -1,5 +1,7 @@
 package inflearn.section2;
 
+import inflearn.Inflearn;
+
 // 인프런 강의
 public class Recursion implements Inflearn {
 

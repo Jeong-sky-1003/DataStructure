@@ -1,3 +1,7 @@
+import baekjoon.BackJoon;
+import baekjoon.function.Function1065;
+import baekjoon.function.Function4376;
+import baekjoon.function.Function4673;
 import caseStudy.MyStart;
 import caseStudy.Scheduler;
 import chap02.array.multi.*;
@@ -22,77 +26,20 @@ import chap04.Chap04;
 import chap04.recursive.*;
 import chap06.Chap06;
 import chap06.sort.BubbleSort;
+import inflearn.Inflearn;
+import inflearn.section2.Recursion2;
+import inflearn.section2.Recursion3;
+import inflearn.section2.Recursion4;
 
 import java.io.*;
 import java.util.*;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
 
-        MyStart myStart = new Scheduler();
-        myStart.start();
-
-//        Chap04 chap04 = new Recursion();
-//        chap04.start();
-
-//        PriorityQueue<Integer> test = new PriorityQueue<>();
-//        List<int[]> tmp = new ArrayList<>();
-//
-//        int[]t = {1,2};
-//        tmp.add(t);
-//
-//        System.out.println(tmp.get(0)[0]);
-
-
-//        Chap06 chap06 = new BubbleSort();
-//        chap06.start();
-//
-//        Chapter03 chapter03 = new MyArrayList<String>();
-//        chapter03.start();
-
-//        ClassStructure phy = new PhyscData();
-//        phy.start();
-
-//        Chapter03 chapter03 = new BinSearch();
-//        chapter03.start();
-
-//        ClassStructure classStudy = new YMD();
-//        classStudy.start();
-
-//        MultiArray array = new DayOfYear_Q9();
-//        array.start();
-
-//        PrimeNumber primeNumber = new PrimeNumber2();
-//        primeNumber.start();
-
-//        IntArray intArray = new IntArray();
-//        intArray.IntArrayMethod();
-
-//        CloneArray cloneArray = new CloneArray();
-//        cloneArray.CloneMethod(new int[] {1,2,3,4,5} );
-
-//        MaxOfArray maxOfArray = new MaxOfArray();
-//        maxOfArray.start();
-
-//        ReverseArray reverseArray = new ReverseArray();
-//        reverseArray.start();
-
-//        ReverseArrayQ2 q2 = new ReverseArrayQ2();
-//        q2.start();
-
-//        ArrayEqual arrayEqual = new ArrayEqual();
-//        arrayEqual.start();
-
-//        CardConvRev card = new CardConvRev();
-//        char[] c = new char[40];
-//        System.out.println(card.cardConvR(59,16, c));
-
-//        CardConvRev2_8 card = new CardConvRev2_8();
-//        card.start();
-
-//        CardConvRev_Q7 card = new CardConvRev_Q7();
-//        card.start();
+        Inflearn inflearn = new Recursion4();
+        inflearn.start();
 
     }
 
