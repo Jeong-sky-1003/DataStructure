@@ -4,6 +4,7 @@ import caseStudy.MyStart;
 
 public class Recursion6 implements MyStart {
 
+    static int num = 0;
     int result = 0;
 
     // 번호별로 flag 체크
@@ -20,28 +21,30 @@ public class Recursion6 implements MyStart {
     // 8퀸의 포인트는 i열에 놓인 위치가 j이면 queen[i] = j 임
     // 고로 queen을 배치하는 메서드의 매개변수는 column 값이라는 것
     // 왜냐면 모든 컬럼의 행을 돌아야하기 때문
-    private void queen(int col){
+    private void queen(int col, int num){
 
         // 8 Queen 이므로 8번 돌아야 함
-        for (int row = 0; row < 8; row++){
+        for (int row = 0; row < num; row++){
 
             if ( flag_row[row] == false &&
                  flag_a[row + col] == false &&
-                 flag_b[col - row + 7] == false){
+                 flag_b[col - row + num - 1] == false){
 
                 pos[col] = row;
                 if (col == 7){
                     result++;
                     print();
                 } else {
-                    flag_row[row] = flag_a[row + col] = flag_b[col - row + 7] = true;
-                    queen(col+1);
-                    flag_row[row] = flag_a[row + col] = flag_b[col - row + 7] = false;
+                    flag_row[row] = flag_a[row + col] = flag_b[col - row + num - 1] = true;
+                    // 열을 하나 증가시켜 재귀함수 실행
+                    queen(col+1, num);
+                    flag_row[row] = flag_a[row + col] = flag_b[col - row + num - 1] = false;
                 }
 
             }
 
         }
+
     }
 
     private void print(){
@@ -53,8 +56,13 @@ public class Recursion6 implements MyStart {
 
     @Override
     public void start() throws Exception {
-        queen(0);
+
+        System.out.print("num: ");
+        num = sc.nextInt();
+
+        queen(0, num);
         System.out.printf("결과: %d", result);
+
     }
 
 }
