@@ -1,7 +1,5 @@
-import caseStudy.MyStart;
-import inflearn.section2.Recursion5;
-import inflearn.section2.Recursion6;
-import springStudy.chap06.proxy.client.ClientWithProxy;
+import baekjoon.BackJoon;
+import baekjoon.function.*;
 
 import java.io.*;
 import java.util.*;
@@ -10,8 +8,8 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        MyStart myStart = new Recursion6();
-        myStart.start();
+        BackJoon backJoon = new Function2292();
+        backJoon.start();
 
     }   // main method
 

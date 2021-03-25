@@ -4,8 +4,8 @@ import caseStudy.MyStart;
 
 public class Recursion6 implements MyStart {
 
-    static int num = 0;
     int result = 0;
+    static int num = 0;
 
     // 번호별로 flag 체크
     // 행 flag는 n 갯수 그대로임
@@ -21,10 +21,10 @@ public class Recursion6 implements MyStart {
     // 8퀸의 포인트는 i열에 놓인 위치가 j이면 queen[i] = j 임
     // 고로 queen을 배치하는 메서드의 매개변수는 column 값이라는 것
     // 왜냐면 모든 컬럼의 행을 돌아야하기 때문
-    private void queen(int col, int num){
+    private void queen(int col, int num) {
 
         // 8 Queen 이므로 8번 돌아야 함
-        for (int row = 0; row < num; row++){
+        for (int row = 0; row < num; row++) {
 
             if ( flag_row[row] == false &&
                  flag_a[row + col] == false &&

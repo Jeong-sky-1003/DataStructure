@@ -1,4 +1,4 @@
-package springStudy.chap06.adapter;
+package springStudy.chap06.adapter.book;
 
 // ServiceA의 변환기
 public class AdapterServiceA {

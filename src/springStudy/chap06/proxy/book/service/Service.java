@@ -1,6 +1,6 @@
-package springStudy.chap06.proxy.service;
+package springStudy.chap06.proxy.book.service;
 
-import springStudy.chap06.proxy.IService;
+import springStudy.chap06.proxy.book.IService;
 
 public class Service implements IService {
 

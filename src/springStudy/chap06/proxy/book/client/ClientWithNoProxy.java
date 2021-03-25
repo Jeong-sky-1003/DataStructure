@@ -1,7 +1,7 @@
-package springStudy.chap06.proxy.client;
+package springStudy.chap06.proxy.book.client;
 
 import caseStudy.MyStart;
-import springStudy.chap06.proxy.service.Service;
+import springStudy.chap06.proxy.book.service.Service;
 
 public class ClientWithNoProxy implements MyStart {
 
