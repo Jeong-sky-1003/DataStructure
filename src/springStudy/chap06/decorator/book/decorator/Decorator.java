@@ -1,7 +1,7 @@
-package springStudy.chap06.decorator.decorator;
+package springStudy.chap06.decorator.book.decorator;
 
-import springStudy.chap06.decorator.IService;
-import springStudy.chap06.decorator.service.Service;
+import springStudy.chap06.decorator.book.IService;
+import springStudy.chap06.decorator.book.service.Service;
 
 public class Decorator implements IService {
 

@@ -1,5 +1,7 @@
 import baekjoon.BackJoon;
 import baekjoon.function.*;
+import caseStudy.MyStart;
+import springStudy.chap06.decorator.example.order.Customer;
 
 import java.io.*;
 import java.util.*;
@@ -8,8 +10,8 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        BackJoon backJoon = new Function2292();
-        backJoon.start();
+        MyStart myStart = new Customer();
+        myStart.start();
 
     }   // main method
 

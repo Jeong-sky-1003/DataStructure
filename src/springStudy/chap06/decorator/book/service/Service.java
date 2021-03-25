@@ -1,6 +1,6 @@
-package springStudy.chap06.decorator.service;
+package springStudy.chap06.decorator.book.service;
 
-import springStudy.chap06.decorator.IService;
+import springStudy.chap06.decorator.book.IService;
 
 public class Service implements IService {
 
