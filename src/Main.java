@@ -1,6 +1,7 @@
 import baekjoon.BackJoon;
 import baekjoon.function.*;
 import caseStudy.MyStart;
+import inflearn.section2.Recursion7;
 import springStudy.chap06.decorator.example.order.Customer;
 
 import java.io.*;
@@ -10,7 +11,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        MyStart myStart = new Customer();
+        MyStart myStart = new Recursion7();
         myStart.start();
 
     }   // main method
