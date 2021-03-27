@@ -13,18 +13,18 @@ public class StartupCoding2 implements BackJoon {
 
         int runCount = Integer.parseInt(input);
 
-        for(int i=0; i < runCount; i++) {
+        for (int i = 0; i < runCount; i++) {
 
             String testCase = br.readLine();
             String[] numbers = testCase.split(" ");
 
-            long n = Long.parseLong( numbers[0] );
-            long m = Long.parseLong( numbers[1] );
+            long n = Long.parseLong(numbers[0]);
+            long m = Long.parseLong(numbers[1]);
 
-            long result1 = n/5;
-            long result2 = (n+m)/12;
+            long result1 = n / 5;
+            long result2 = (n + m) / 12;
 
-            long result = (result1 <= result2)? result1 : result2;
+            long result = (result1 <= result2) ? result1 : result2;
             System.out.println(result);
 
         } // 전체 for문
@@ -34,7 +34,7 @@ public class StartupCoding2 implements BackJoon {
     }
 
     @Override
-    public void start() throws Exception{
+    public void start() throws Exception {
         this.run();
     }
 

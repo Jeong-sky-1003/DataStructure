@@ -8,28 +8,28 @@ public class IntAryQueueTester implements Chapter03 {
 
     private Scanner sc;
 
-    public IntAryQueueTester(){
+    public IntAryQueueTester() {
         sc = new Scanner(System.in);
     }
 
-    private void controller(){
+    private void controller() {
 
         IntAryQueue que = new IntAryQueue(5);
 
-        while (true){
+        while (true) {
 
             System.out.print("메뉴 입력: ");
             int menu = sc.nextInt();
 
             if (menu == 0) break;
 
-            switch (menu){
+            switch (menu) {
 
                 case 1:
                     try {
                         System.out.print("값: ");
                         que.enqueue(sc.nextInt());
-                    } catch (IntAryQueue.OverFlowQueueException e){
+                    } catch (IntAryQueue.OverFlowQueueException e) {
                         System.out.println("영역 초과");
                     }
                     break;
@@ -38,7 +38,7 @@ public class IntAryQueueTester implements Chapter03 {
                     try {
                         menu = que.dequeue();
                         System.out.printf("디큐 진행 : %d\n", menu);
-                    } catch (IntAryQueue.EmptyQueueException e){
+                    } catch (IntAryQueue.EmptyQueueException e) {
                         System.out.println("값이 존재하지 않음");
                     }
                     break;
@@ -46,7 +46,7 @@ public class IntAryQueueTester implements Chapter03 {
                 case 3:
                     try {
                         que.dump();
-                    } catch (IntAryQueue.EmptyQueueException e){
+                    } catch (IntAryQueue.EmptyQueueException e) {
                         System.out.println("값이 존재하지 않음");
                     }
                     break;

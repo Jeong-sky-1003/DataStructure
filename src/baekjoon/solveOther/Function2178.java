@@ -21,7 +21,7 @@ public class Function2178 implements BackJoon {
 
      */
 
-    static class Maze{
+    static class Maze {
 
         static int n = 4;
         static int m = 6;
@@ -44,16 +44,16 @@ public class Function2178 implements BackJoon {
         //System.out.printf("check method - x: %d, y %d\n", x, y);
 
         // x 좌표가 너무 작거나, 크거나. y가 너무 크거나 작거나.
-        if ( y < 0 || y >= Maze.m || x < 0 || x >= Maze.n )  {
+        if (y < 0 || y >= Maze.m || x < 0 || x >= Maze.n) {
             //System.out.println("좌표 크기 false");
             return false;
         }
-        if ( Maze.maze[x][y] == 0) {
+        if (Maze.maze[x][y] == 0) {
             // 벽인 경우 false
             //System.out.println("벽 만남");
             return false;
         }
-        if ( Maze.visited[x][y] > 0) {
+        if (Maze.visited[x][y] > 0) {
             // 이미 방문한 좌표인 경우
             //System.out.println("이미 방문");
             return false;
@@ -64,7 +64,7 @@ public class Function2178 implements BackJoon {
     }
 
     // 미로 탈출은 (n-1, m-1) 좌표다.
-    private int searchDFS(int x, int y){
+    private int searchDFS(int x, int y) {
 
         // count를 위한 queue
         Queue<Integer> que_count = new LinkedList<>();
@@ -88,7 +88,7 @@ public class Function2178 implements BackJoon {
         int result = 0;
 
         // queue 의 값이 empty( ) 가 아닌 동안 반복문 진행
-        while ( queue_y.isEmpty() == false ){
+        while (queue_y.isEmpty() == false) {
 
             int count = que_count.poll();
             result = count;
@@ -99,7 +99,7 @@ public class Function2178 implements BackJoon {
             int current_y = queue_y.poll();
 
             // 이미 방문이 체크되어 있다면 continue 로 돌아감
-            if ( Maze.visited[current_x][current_y] != 0 ) continue;
+            if (Maze.visited[current_x][current_y] != 0) continue;
             // 방문한 곳이 체크되어 있지 않다면 방문여부 체크
             Maze.visited[current_x][current_y] = 1;
             printMaze();
@@ -108,7 +108,7 @@ public class Function2178 implements BackJoon {
             //System.out.println("que is empty chk: " + queue_y.isEmpty());
 
             // 마지막 지점 도달시 break; - 예외처리
-            if ( Maze.n == current_x && Maze.m == current_y) {
+            if (Maze.n == current_x && Maze.m == current_y) {
                 //System.out.println("break 조건 만족");
                 break;
             }
@@ -117,15 +117,15 @@ public class Function2178 implements BackJoon {
             // x: 행, y: 열
 
             // 상
-            if ( check( current_x - 1, current_y ) ) {
+            if (check(current_x - 1, current_y)) {
                 //System.out.println("위로 이동");
-                queue_x.add( current_x - 1 );
-                queue_y.add( current_y );
-                que_count.add( count + 1 );
+                queue_x.add(current_x - 1);
+                queue_y.add(current_y);
+                que_count.add(count + 1);
             }
 
             // 하
-            if ( check( current_x + 1, current_y ) ) {
+            if (check(current_x + 1, current_y)) {
                 //System.out.println("아래로 이동");
                 queue_x.add(current_x + 1);
                 queue_y.add(current_y);
@@ -133,7 +133,7 @@ public class Function2178 implements BackJoon {
             }
 
             // 좌
-            if ( check( current_x , current_y - 1 ) ) {
+            if (check(current_x, current_y - 1)) {
                 //System.out.println("왼쪽으로 이동");
                 queue_x.add(current_x);
                 queue_y.add(current_y - 1);
@@ -141,7 +141,7 @@ public class Function2178 implements BackJoon {
             }
 
             // 우
-            if ( check( current_x, current_y + 1 ) ) {
+            if (check(current_x, current_y + 1)) {
                 //System.out.println("오른쪽으로 이동");
                 queue_x.add(current_x);
                 queue_y.add(current_y + 1);
@@ -154,11 +154,11 @@ public class Function2178 implements BackJoon {
 
     }
 
-    private void printMaze(){
+    private void printMaze() {
 
-        for(int i=0; i < Maze.n; i++){
+        for (int i = 0; i < Maze.n; i++) {
 
-            for (int j=0; j < Maze.m; j++){
+            for (int j = 0; j < Maze.m; j++) {
                 System.out.print(Maze.visited[i][j] + "  ");
             }
             System.out.println("");
@@ -169,10 +169,10 @@ public class Function2178 implements BackJoon {
     }
 
 
-   @Override
+    @Override
     public void start() {
 
-        int result = this.searchDFS(0,0);
+        int result = this.searchDFS(0, 0);
         System.out.println(result);
 
     }

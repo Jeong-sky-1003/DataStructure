@@ -8,13 +8,13 @@ public class Factorial implements Chap04 {
 
     private Scanner sc;
 
-    public Factorial(){
+    public Factorial() {
         sc = new Scanner(System.in);
     }
 
-    private int factorial(int n){
+    private int factorial(int n) {
 
-        if(n > 0){
+        if (n > 0) {
             return n * factorial(n - 1);
         } else {
             return 1;
@@ -22,10 +22,10 @@ public class Factorial implements Chap04 {
 
     }
 
-    private int factorialVer2(int n){
+    private int factorialVer2(int n) {
         int result = n;
-        if (n > 0){
-            for (int i = 1; i < n; i++){
+        if (n > 0) {
+            for (int i = 1; i < n; i++) {
                 result = result * (n - i);
             }
             return result;

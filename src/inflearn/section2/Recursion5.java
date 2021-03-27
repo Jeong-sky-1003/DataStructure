@@ -17,34 +17,32 @@ public class Recursion5 implements MyStart {
     private static int IMAGE_COLOR = 1;
     private static int ALREADY_COUNTED = 2;
 
-    private int countCells(int x, int y){
+    private int countCells(int x, int y) {
 
-        if ( x < 0 || x >= n || y >= m || y < 0 ) {
+        if (x < 0 || x >= n || y >= m || y < 0) {
             return 0;
-        }
-        else if ( grid[x][y] != Recursion5.IMAGE_COLOR ) {
+        } else if (grid[x][y] != Recursion5.IMAGE_COLOR) {
             return 0;
-        }
-        else {
+        } else {
             grid[x][y] = Recursion5.ALREADY_COUNTED;
 
             // 북: x-1, y / 북동: x-1, y+1 / 동: x, y+1 / 북서: x-1, y-1
             // 남동: x+1, y+1 / 남: x+1, y / 남서: x+1, y-1 / 서: x, y-1
-            return 1    + countCells(x-1, y-1)
-                        + countCells(x-1, y+1)
-                        + countCells(x, y+1)
-                        + countCells(x+1, y+1)
-                        + countCells(x+1, y)
-                        + countCells(x-1, y)
-                        + countCells(x+1, y-1)
-                        + countCells(x, y-1);
+            return 1 + countCells(x - 1, y - 1)
+                    + countCells(x - 1, y + 1)
+                    + countCells(x, y + 1)
+                    + countCells(x + 1, y + 1)
+                    + countCells(x + 1, y)
+                    + countCells(x - 1, y)
+                    + countCells(x + 1, y - 1)
+                    + countCells(x, y - 1);
         }
 
     }
 
-    private void print(){
-        for(int i=0; i < grid.length; i++){
-            for (int j=0; j < grid[i].length; j++){
+    private void print() {
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[i].length; j++) {
                 System.out.printf("%d  ", grid[i][j]);
             }
             System.out.println();
@@ -52,7 +50,7 @@ public class Recursion5 implements MyStart {
     }
 
     @Override
-    public void start() throws Exception{
+    public void start() throws Exception {
 
         System.out.print("n(x): ");
         n = sc.nextInt();
@@ -63,10 +61,10 @@ public class Recursion5 implements MyStart {
         grid = new int[n][m];
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        for (int i=0; i < n; i++){
+        for (int i = 0; i < n; i++) {
             String input = reader.readLine();
-            for (int j=0; j < m; j++){
-                grid[i][j] = Integer.parseInt(input.substring(j,j+1));
+            for (int j = 0; j < m; j++) {
+                grid[i][j] = Integer.parseInt(input.substring(j, j + 1));
             }
         }
 

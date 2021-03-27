@@ -2,7 +2,7 @@ package chap02.array.basic;
 
 public class CloneArray {
 
-    public void CloneMethod(int[] original){
+    public void CloneMethod(int[] original) {
 
         int[] copy = original.clone();
 
@@ -16,8 +16,8 @@ public class CloneArray {
 
     }
 
-    private void print(int[] array){
-        for(int element : array){
+    private void print(int[] array) {
+        for (int element : array) {
             System.out.println(element);
         }
         System.out.println("----------");

@@ -12,12 +12,12 @@ public class Function1316 implements BackJoon {
         boolean[] chk = new boolean[26];
         int len = str.length();
 
-        for (int i=0; i < len; i++){
+        for (int i = 0; i < len; i++) {
 
             int index = str.charAt(i) - 'a';
-            if ( chk[index] )
+            if (chk[index])
                 return false;
-            else if ( i < len-1 && str.charAt(i) != str.charAt(i+1) ) {
+            else if (i < len - 1 && str.charAt(i) != str.charAt(i + 1)) {
                 chk[index] = true;
             }
 
@@ -34,7 +34,7 @@ public class Function1316 implements BackJoon {
         String input = reader.readLine();
         int num = Integer.parseInt(input);
 
-        for ( int i=0; i < num; i++ ) {
+        for (int i = 0; i < num; i++) {
             String str = reader.readLine();
             boolean chk = check(str);
             if (chk) result++;

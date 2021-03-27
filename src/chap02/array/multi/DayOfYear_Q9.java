@@ -2,16 +2,16 @@ package chap02.array.multi;
 
 import java.util.Scanner;
 
-public class DayOfYear_Q9 implements MultiArray{
+public class DayOfYear_Q9 implements MultiArray {
 
     private Scanner sc;
     private final static
-            int[][] days = {
-                            {31,28,31,30,31,30,31,31,30,31,30,31},
-                            {31,29,31,30,31,30,31,31,30,31,30,31}
-                            };
+    int[][] days = {
+            {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31},
+            {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}
+    };
 
-    public DayOfYear_Q9(){
+    public DayOfYear_Q9() {
         sc = new Scanner(System.in);
     }
 
@@ -43,18 +43,18 @@ public class DayOfYear_Q9 implements MultiArray{
 
     // 윤년 : 1 , 일반 : 0
     // 3항
-    private int monthOfDayChk(int year){
-        return ( year%4 == 0 && year%100 != 0 && year%400 == 0 ) ? 1 : 0;
+    private int monthOfDayChk(int year) {
+        return (year % 4 == 0 && year % 100 != 0 && year % 400 == 0) ? 1 : 0;
     }
 
     // 그 해 경과일수 구하기
-    private int dayOfYear(int year, int month, int day){
+    private int dayOfYear(int year, int month, int day) {
 
         int x = this.monthOfDayChk(year);
         int[] daysArray = days[x];
 
         int index = 0;
-        while (index < month - 1){
+        while (index < month - 1) {
             day = day + daysArray[index++];
         }
 
@@ -63,18 +63,18 @@ public class DayOfYear_Q9 implements MultiArray{
     }
 
     // 그 해의 남은 일수 구하기
-    private int leftDayOfYear(int year, int month, int day){
+    private int leftDayOfYear(int year, int month, int day) {
 
         int x = this.monthOfDayChk(year);
         int[] daysArray = days[x];
 
         int index = 0;
-        while (index < month - 1){
+        while (index < month - 1) {
             day = day + daysArray[index++];
         }
 
         int totalDay = 0;
-        for (int element : daysArray){
+        for (int element : daysArray) {
             totalDay += element;
         }
 

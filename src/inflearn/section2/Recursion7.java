@@ -5,11 +5,11 @@ import caseStudy.MyStart;
 public class Recursion7 implements MyStart {
 
     // 전체 집합
-    private static char []s_list =  {'a', 'b', 'c', 'd', 'e', 'f'};
+    private static char[] s_list = {'a', 'b', 'c', 'd', 'e', 'f'};
     private static int n = s_list.length;
-    private static boolean []include = new boolean[n];
+    private static boolean[] include = new boolean[n];
 
-    private void powerSet(int k){
+    private void powerSet(int k) {
 
         // 처음 이 함수를 호출할 때 powerSet(0)으로 호출함
         // 이 뜻은 합집합을 나타내는 p_list는 공집합이라는 뜻임
@@ -42,11 +42,11 @@ public class Recursion7 implements MyStart {
 
         // base case : 집합 S가 공집합인 경우를 이야기 함
         // k는 합집합 원소의 범위를 나타내는 기준으로 만약 k가 배열의 크기까지 도달했을 경우 출력
-        if ( k == n ){
+        if (k == n) {
             System.out.println("----------------------------------------");
-            for ( int i=0; i < n; i++ ){
+            for (int i = 0; i < n; i++) {
                 // 만약 boolean index 번호가 true라면 해당 요소 출력
-                if ( include[i] ) System.out.print( s_list[i] + " " );
+                if (include[i]) System.out.print(s_list[i] + " ");
             }
             System.out.println("\n----------------------------------------");
             return;
@@ -57,12 +57,12 @@ public class Recursion7 implements MyStart {
         include[k] = false;
         // k+1을 해줌으로 집합 S의 범위 재정의
         // 트리의 왼쪽으로 내려감
-        powerSet(k+1);
+        powerSet(k + 1);
 
         // (2) s_list[k]가 포함된 부분집합의 경우를 출력하기 위한 것
         // 트리의 오른쪽으로 내려감
         include[k] = true;
-        powerSet(k+1);
+        powerSet(k + 1);
 
     }
 

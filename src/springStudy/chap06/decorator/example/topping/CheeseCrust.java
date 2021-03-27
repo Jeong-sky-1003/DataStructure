@@ -7,7 +7,7 @@ public class CheeseCrust extends CondimentDecorator {
 
     Pizza pizza;
 
-    public CheeseCrust(Pizza pizza){
+    public CheeseCrust(Pizza pizza) {
         super();
         this.pizza = pizza;
     }

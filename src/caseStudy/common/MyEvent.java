@@ -6,7 +6,7 @@ public abstract class MyEvent {
 
     public String title;
 
-    public MyEvent(String title){
+    public MyEvent(String title) {
         this.title = title;
     }
 

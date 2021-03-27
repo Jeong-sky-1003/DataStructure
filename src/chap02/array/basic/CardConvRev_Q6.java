@@ -9,11 +9,11 @@ public class CardConvRev_Q6 {
     private Scanner sc;
     private final static String DCHAR = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-    public CardConvRev_Q6(){
+    public CardConvRev_Q6() {
         sc = new Scanner(System.in);
     }
 
-    public void start(){
+    public void start() {
 
         char[] dChar = new char[40];
 
@@ -26,13 +26,13 @@ public class CardConvRev_Q6 {
         number = this.cardConv(number, r, dChar);
 
         System.out.println(number + "자리수");
-        for (char element:dChar){
+        for (char element : dChar) {
             System.out.print(element);
         }
 
     }
 
-    private int cardConv(int x, int r, char[] d){
+    private int cardConv(int x, int r, char[] d) {
 
         do {
 

@@ -1,6 +1,6 @@
 package springStudy.chap06.adapter.sky.animal;
 
-public class Tiger implements Animal{
+public class Tiger implements Animal {
 
     @Override
     public void sound() {

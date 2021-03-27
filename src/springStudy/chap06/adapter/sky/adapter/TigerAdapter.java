@@ -7,7 +7,7 @@ public class TigerAdapter implements Animal {
 
     Animal tiger;
 
-    public TigerAdapter(Tiger tiger){
+    public TigerAdapter(Tiger tiger) {
         this.tiger = tiger;
     }
 

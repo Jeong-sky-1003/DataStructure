@@ -2,7 +2,7 @@ package chap02.array.basic;
 
 public class IntArray {
 
-    public void IntArrayMethod(){
+    public void IntArrayMethod() {
 
         int[] a = new int[5];
 
@@ -12,7 +12,7 @@ public class IntArray {
         a[3] = 4;
         a[4] = 5;
 
-        for(int element : a){
+        for (int element : a) {
             System.out.println(element);
         }
 

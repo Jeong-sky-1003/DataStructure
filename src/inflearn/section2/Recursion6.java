@@ -16,7 +16,7 @@ public class Recursion6 implements MyStart {
     boolean[] flag_b = new boolean[15];
 
     // queen 배치 배열 체크
-    int []pos = new int[8];
+    int[] pos = new int[8];
 
     // 8퀸의 포인트는 i열에 놓인 위치가 j이면 queen[i] = j 임
     // 고로 queen을 배치하는 메서드의 매개변수는 column 값이라는 것
@@ -26,18 +26,18 @@ public class Recursion6 implements MyStart {
         // 8 Queen 이므로 8번 돌아야 함
         for (int row = 0; row < num; row++) {
 
-            if ( flag_row[row] == false &&
-                 flag_a[row + col] == false &&
-                 flag_b[col - row + num - 1] == false){
+            if (flag_row[row] == false &&
+                    flag_a[row + col] == false &&
+                    flag_b[col - row + num - 1] == false) {
 
                 pos[col] = row;
-                if (col == 7){
+                if (col == 7) {
                     result++;
                     print();
                 } else {
                     flag_row[row] = flag_a[row + col] = flag_b[col - row + num - 1] = true;
                     // 열을 하나 증가시켜 재귀함수 실행
-                    queen(col+1, num);
+                    queen(col + 1, num);
                     flag_row[row] = flag_a[row + col] = flag_b[col - row + num - 1] = false;
                 }
 
@@ -47,8 +47,8 @@ public class Recursion6 implements MyStart {
 
     }
 
-    private void print(){
-        for (int e:pos){
+    private void print() {
+        for (int e : pos) {
             System.out.printf("%d  ", e);
         }
         System.out.println();

@@ -8,28 +8,28 @@ public class IntRingBufferQueueTester implements Chapter03 {
 
     private Scanner sc;
 
-    public IntRingBufferQueueTester(){
+    public IntRingBufferQueueTester() {
         sc = new Scanner(System.in);
     }
 
-    private void controller(){
+    private void controller() {
 
         IntRingBufferQueue que = new IntRingBufferQueue(10);
 
-        while (true){
+        while (true) {
 
             System.out.print("(1)인큐 (2)디큐 (3)피크 (4)덤프 (5)검색 (0)종료 : ");
             int menu = sc.nextInt();
 
             if (menu == 0) break;
 
-            switch (menu){
+            switch (menu) {
 
                 case 1:
-                    try{
+                    try {
                         System.out.print("값: ");
                         menu = que.enqueue(sc.nextInt());
-                    } catch (IntRingBufferQueue.OverFlowRingBufferQueueException e){
+                    } catch (IntRingBufferQueue.OverFlowRingBufferQueueException e) {
                         System.out.println("큐가 가득찼습니다.");
                     }
                     break;
@@ -38,7 +38,7 @@ public class IntRingBufferQueueTester implements Chapter03 {
                     try {
                         menu = que.dequeue();
                         System.out.printf("디큐: %d\n", menu);
-                    } catch (IntRingBufferQueue.EmptyRingBufferQueueException e){
+                    } catch (IntRingBufferQueue.EmptyRingBufferQueueException e) {
                         System.out.println("큐가 비어있습니다.");
                     }
                     break;
@@ -47,7 +47,7 @@ public class IntRingBufferQueueTester implements Chapter03 {
                     try {
                         menu = que.peek();
                         System.out.printf("피크: %d\n", menu);
-                    } catch (IntRingBufferQueue.EmptyRingBufferQueueException e){
+                    } catch (IntRingBufferQueue.EmptyRingBufferQueueException e) {
                         System.out.println("큐가 비었습니다.");
                     }
                     break;
@@ -61,7 +61,7 @@ public class IntRingBufferQueueTester implements Chapter03 {
                         System.out.print("검색 값: ");
                         menu = que.indexOf(sc.nextInt());
                         System.out.printf("큐 위치: %d\n", menu);
-                    } catch (IntRingBufferQueue.EmptyRingBufferQueueException e){
+                    } catch (IntRingBufferQueue.EmptyRingBufferQueueException e) {
                         System.out.println("큐가 비었습니다.");
                     }
                     break;

@@ -4,16 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class PrimeNumber2 implements PrimeNumber{
+public class PrimeNumber2 implements PrimeNumber {
 
     private Scanner sc;
 
-    public PrimeNumber2(){
+    public PrimeNumber2() {
         sc = new Scanner(System.in);
     }
 
     @Override
-    public void start(){
+    public void start() {
 
         List<Integer> primes = new ArrayList<>();
         primes.add(2);
@@ -22,27 +22,27 @@ public class PrimeNumber2 implements PrimeNumber{
 
         int counter = 0;
 
-        for (int i = 3; i <= 100; i+=2){
+        for (int i = 3; i <= 100; i += 2) {
 
             boolean chk = true;
 
-            for (int j = 1; primes.get(j) * primes.get(j) <= i; j++){
+            for (int j = 1; primes.get(j) * primes.get(j) <= i; j++) {
                 counter = counter + 2;
-                if (i%primes.get(j) == 0){
+                if (i % primes.get(j) == 0) {
                     chk = false;
                     break;
                 }
 
             }
 
-            if (chk){
+            if (chk) {
                 primes.add(i);
                 counter++;
             }
 
         }
 
-        for (Integer element:primes){
+        for (Integer element : primes) {
             System.out.println(element);
         }
 

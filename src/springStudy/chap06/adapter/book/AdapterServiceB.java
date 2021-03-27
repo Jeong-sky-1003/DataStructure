@@ -4,7 +4,7 @@ public class AdapterServiceB {
 
     ServiceB serviceB = new ServiceB();
 
-    void runService(){
+    void runService() {
         serviceB.runServiceB();
     }
 

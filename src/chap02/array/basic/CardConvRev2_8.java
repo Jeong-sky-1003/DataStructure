@@ -12,7 +12,7 @@ public class CardConvRev2_8 {
     private ReverseArray reverseArray;
     private final static String DCHAR = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-    public CardConvRev2_8(){
+    public CardConvRev2_8() {
 
         resultIndex = 0;
 
@@ -21,7 +21,7 @@ public class CardConvRev2_8 {
 
     }
 
-    public void start(){
+    public void start() {
 
         int continueChk = 0;
 
@@ -39,7 +39,7 @@ public class CardConvRev2_8 {
 
     }
 
-    private int[] calculateInit(){
+    private int[] calculateInit() {
 
         int mod = 0;
         int number = 0;
@@ -48,7 +48,7 @@ public class CardConvRev2_8 {
         do {
             System.out.print("10진수를 기수 변환합니다.\n변환하는 음이 아닌 정수 : ");
             number = sc.nextInt();
-        } while (number < 1 );
+        } while (number < 1);
 
         do {
             System.out.print("어떤 진수로 변환할까요? (2 ~ 36) : ");
@@ -59,7 +59,7 @@ public class CardConvRev2_8 {
 
     }
 
-    private void cardConv(int number, int mod){
+    private void cardConv(int number, int mod) {
 
         do {
 
@@ -74,11 +74,11 @@ public class CardConvRev2_8 {
 
     }
 
-    private void print(int mod, char[] array){
+    private void print(int mod, char[] array) {
 
-        System.out.print(mod + "진수로는 " );
+        System.out.print(mod + "진수로는 ");
 
-        for (char element:array){
+        for (char element : array) {
             System.out.print(element);
         }
 

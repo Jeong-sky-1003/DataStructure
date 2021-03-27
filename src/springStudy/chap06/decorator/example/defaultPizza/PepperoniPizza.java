@@ -4,7 +4,7 @@ import springStudy.chap06.decorator.example.menu.Pizza;
 
 public class PepperoniPizza extends Pizza {
 
-    public PepperoniPizza(){
+    public PepperoniPizza() {
         super();
         this.menu = "페퍼로니 피자";
     }

@@ -5,7 +5,7 @@ import chap03.Chapter03;
 import javax.jws.Oneway;
 import java.util.Arrays;
 
-public class MyArrayList <E> implements Chapter03 {
+public class MyArrayList<E> implements Chapter03 {
 
     private static final int INIT_CAPACITY = 10;
     private E[] theData;
@@ -13,7 +13,7 @@ public class MyArrayList <E> implements Chapter03 {
     private int capacity;   // 배열의 현재 크기
 
     // 생성자에서는 type parameter를 쓸 필요가 없음
-    public MyArrayList(){
+    public MyArrayList() {
         /*
             Generic의 배열 생성
             theData = new E[INIT_CAPACITY];
@@ -27,7 +27,7 @@ public class MyArrayList <E> implements Chapter03 {
     }
 
     // reallocate :
-    private void reallocate(){
+    private void reallocate() {
 
         // 방법 두 가지가 존재함
         // 1번: 더 큰 배열을 생성한 뒤
@@ -42,7 +42,7 @@ public class MyArrayList <E> implements Chapter03 {
     }
 
     // remove : index 해당 값 삭제
-    public E remove(int index){
+    public E remove(int index) {
 
         // index 값 예외처리
         if (index < 0 || size <= index)
@@ -51,8 +51,8 @@ public class MyArrayList <E> implements Chapter03 {
         // 삭제할 Index 번호의 값 리턴
         E returnValue = theData[index];
         // 값 삭제를 위한 반복문
-        for (int i = size - 1; i >= index; i--){
-            theData[i-1] = theData[i];
+        for (int i = size - 1; i >= index; i--) {
+            theData[i - 1] = theData[i];
         }
         size--;
 
@@ -61,7 +61,7 @@ public class MyArrayList <E> implements Chapter03 {
     }
 
     // index 위치 값 변경
-    public E set(int index, E newEntity){
+    public E set(int index, E newEntity) {
 
         // index가 0보다 작거나 size보다 큰 경우 예외처리
         if (index < 0 || size <= index)
@@ -75,16 +75,16 @@ public class MyArrayList <E> implements Chapter03 {
     }
 
     // get: index번에 위치한 값 가져오기
-    public E get(int index){
+    public E get(int index) {
         if (index < 0 || size <= index)
             throw new ArrayIndexOutOfBoundsException(index);
         return theData[index];
     }
 
     // indexOf: 데이터를 받아 데이터가 존재하면 index 번호 아니면 -1
-    public int indexOf(E anEntry){
+    public int indexOf(E anEntry) {
 
-        for (int i=0; i < size; i++){
+        for (int i = 0; i < size; i++) {
 
             // 하지만 동일성을 판단하는 것은 Primitive type에 한정됨
             // 고로 reference type은 equals로 비교되는데, 아래와 같이 코딩할 경우 에러 발생함
@@ -97,21 +97,21 @@ public class MyArrayList <E> implements Chapter03 {
     }
 
     // size 갯수 리턴
-    public int size(){
+    public int size() {
         return size;
     }
 
     // add method : 맨 뒤에 데이터 추가
-    public void add(E anEntity){
+    public void add(E anEntity) {
         theData[size++] = anEntity;
     }
 
     // add method : 지정 인덱스에 데이터 추가 기능
-    public void add(int index, E anEntity){
+    public void add(int index, E anEntity) {
 
         // 새로운 데이터가 삽입되는데 앞에 빈 공간이 생기는 경우 방지
         // 즉, 유효하지 않은 인덱스가 발생할 경우 예외처리
-        if ( index < 0 || size <= index){
+        if (index < 0 || size <= index) {
             // 방법 1. return으로 일종의 오류 처리. 하지만 권장 X
             // return;
             // 방법 2. exception 처리
@@ -119,13 +119,13 @@ public class MyArrayList <E> implements Chapter03 {
         }
 
         // 모든 데이터가 차있는 경우
-        if (size >= capacity){
+        if (size >= capacity) {
             reallocate();
         }
 
         // Index 번째 위치에 데이터를 추가하려면 index 번째 위치에 index 번호부터 뒤에 있는 데이터 shift 진행
         // Index 부터 size - 1번까지 데이터를 이동시킴
-        for (int i = size-1; i >= index; i--){
+        for (int i = size - 1; i >= index; i--) {
             // 뒤에서부터 검토하기에 임시 변수가 필요 없음
             theData[i + 1] = theData[i];
         }
@@ -141,7 +141,7 @@ public class MyArrayList <E> implements Chapter03 {
 
         try {
             test.add(1, "hello");
-        } catch ( ArrayIndexOutOfBoundsException e){
+        } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println(e);
         }
 

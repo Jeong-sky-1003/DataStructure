@@ -9,14 +9,14 @@ public class Start6 implements BackJoon {
 
     class Start6Class extends Thread {
 
-        public void run(){
+        public void run() {
 
             try {
-                for(int i=0; i < 10; i++){
+                for (int i = 0; i < 10; i++) {
                     System.out.printf("%s, i: %d, share %d\n", this.getName(), i, share++);
                     sleep(2000);
                 }
-            } catch (InterruptedException e){
+            } catch (InterruptedException e) {
 
             }
 

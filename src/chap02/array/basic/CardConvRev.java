@@ -8,18 +8,18 @@ public class CardConvRev {
 
     private ReverseArray reverseArray;
 
-    public CardConvRev(){
+    public CardConvRev() {
         reverseArray = new ReverseArray();
     }
 
-    public char[] cardConvR(int number, int r, char[] result){
+    public char[] cardConvR(int number, int r, char[] result) {
 
         int calculate = number % r;
         number /= r;
 
         result[index++] = DCHAR.charAt(calculate);
 
-        if (number != 0){
+        if (number != 0) {
             cardConvR(number, r, result);
         } else {
             reverseArray.reverseArray(result);

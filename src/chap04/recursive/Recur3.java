@@ -7,14 +7,14 @@ import java.util.Scanner;
 
 public class Recur3 implements Chap04 {
 
-    private void recur3(int n){
+    private void recur3(int n) {
 
         IntStack stkA = new IntStack(n);
         IntStack stkB = new IntStack(n);
 
-        while (true){
+        while (true) {
 
-            if ( n > 0 ){
+            if (n > 0) {
                 stkA.push(n);
             }
 

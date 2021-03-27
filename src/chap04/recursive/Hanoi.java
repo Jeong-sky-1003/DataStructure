@@ -10,34 +10,34 @@ public class Hanoi implements Chap04 {
 
     private Scanner sc;
 
-    public Hanoi(){
+    public Hanoi() {
         sc = new Scanner(System.in);
     }
 
     /**
-     *  num : 원반 번호
-     *  start : 현재 기둥 위치
-     *  goal : 이동 목표 기둥
+     * num : 원반 번호
+     * start : 현재 기둥 위치
+     * goal : 이동 목표 기둥
      */
-    private void hanoi(int num, int start, int goal){
+    private void hanoi(int num, int start, int goal) {
 
         Stack<Integer> stkTest = new Stack<>();
         stkTest.push(0);
 
         // 첫 이동 제어
         // 기둥은 무조건 3개임
-        if ( num > 1 )
+        if (num > 1)
             hanoi(num - 1, start, 6 - start - goal);
 
         System.out.printf("%d번 원반: %d -> %d\n", num, start, goal);
 
         // 이동한 뒤 추가 이동
-        if ( num > 1 )
+        if (num > 1)
             hanoi(num - 1, 6 - start - goal, goal);
 
     }
 
-    private void hanoiVer2(int num, int start, int goal){
+    private void hanoiVer2(int num, int start, int goal) {
 
         int chk = 0;    // 0: 재귀 미 완료, 1: 재귀 완료
 
@@ -45,10 +45,10 @@ public class Hanoi implements Chap04 {
         IntStack goalStack = new IntStack(100);
         IntStack chkStack = new IntStack(100);
 
-        while (true){
+        while (true) {
 
             // 재귀가 완료되지 않은 원판의 이동
-            if ( chk == 0 && num > 1){
+            if (chk == 0 && num > 1) {
 
                 // 동일한 위치에 값을 각각 push 해줌
                 startStack.push(start);
@@ -67,7 +67,7 @@ public class Hanoi implements Chap04 {
             System.out.printf("%d번 원반: %d -> %d\n", num, start, goal);
 
             // 재귀가 1차 완료된 원판의 이동
-            if ( chk == 1 && num > 1){
+            if (chk == 1 && num > 1) {
 
                 startStack.push(start);
                 goalStack.push(goal);
@@ -92,7 +92,7 @@ public class Hanoi implements Chap04 {
                     chk = chkStack.pop() + 1;   // 이동 1차 완료되었음 체크
                     System.out.printf("%d번 원반 pop, chk 값 확인: %d\n", num, chk);
                     num++;  // 원판의 갯수 회복
-                } catch (IntStack.EmptyIntStackException e){
+                } catch (IntStack.EmptyIntStackException e) {
 
                 }
 

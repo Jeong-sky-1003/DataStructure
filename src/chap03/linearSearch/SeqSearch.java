@@ -11,17 +11,18 @@ public class SeqSearch implements Chapter03 {
 
     private Scanner sc;
 
-    public SeqSearch(){
+    public SeqSearch() {
         sc = new Scanner(System.in);
     }
 
     /**
      * 보초법 적용 메서드
+     *
      * @param list
      * @param number
      * @return
      */
-    private int sentinelMethod(int[] list, int number){
+    private int sentinelMethod(int[] list, int number) {
 
         /*
             보초랑 보초 적용 안 한 메서드랑 결과 같은 이유는
@@ -33,7 +34,7 @@ public class SeqSearch implements Chapter03 {
         // 보초 추가
         list[list.length - 1] = number;
 
-        while (true){
+        while (true) {
             count++;
             System.out.println(count + "회 실행");
             if (list[index] == number)
@@ -41,20 +42,21 @@ public class SeqSearch implements Chapter03 {
             index++;
         }
 
-        return index == list.length? -1 : index;
+        return index == list.length ? -1 : index;
 
     }
 
     /**
      * 보초법 미적용 메서드
+     *
      * @param list
      * @param number
      * @return
      */
-    private int seqSearch(int[] list, int number){
+    private int seqSearch(int[] list, int number) {
         // 106페이지 실행결과 예제 입력 : 실행횟수 5회
         int count = 0;
-        for (int i=0; i < list.length; i++){
+        for (int i = 0; i < list.length; i++) {
             count++;
             System.out.println(count + "회 실행");
             if (list[i] == number) return i;
@@ -64,7 +66,7 @@ public class SeqSearch implements Chapter03 {
 
     }
 
-    private void print(int number, int result){
+    private void print(int number, int result) {
         if (result > -1) System.out.printf("%d는 x[%d]에 있습니다.", number, result);
         else System.out.println("값이 존재하지 않습니다.");
     }
@@ -81,7 +83,7 @@ public class SeqSearch implements Chapter03 {
         // 보초법 적용
         int[] list = new int[number + 1];
 
-        for (int i = 0; i < number; i++){
+        for (int i = 0; i < number; i++) {
             System.out.printf("x[%d] : ", i);
             list[i] = sc.nextInt();
         }

@@ -7,16 +7,16 @@ public class DeadlinedEvent extends MyEvent {
 
     private MyDate deadline;
 
-    public MyDate getDeadline(){
+    public MyDate getDeadline() {
         return deadline;
     }
 
-    public DeadlinedEvent(String title, MyDate deadline){
+    public DeadlinedEvent(String title, MyDate deadline) {
         super(title);
         this.deadline = deadline;
     }
 
-    public String toString(){
+    public String toString() {
         return title + ", " + deadline.toString();
     }
 

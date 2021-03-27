@@ -2,7 +2,7 @@ package springStudy.chap06.proxy.book;
 
 import springStudy.chap06.proxy.book.service.Service;
 
-public class Proxy implements IService{
+public class Proxy implements IService {
 
     // 여기서 중요한 포인트는 Proxy는 Service의 메서드를 대변한다는 것
     IService iService;

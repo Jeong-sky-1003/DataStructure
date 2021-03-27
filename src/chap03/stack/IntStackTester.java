@@ -8,33 +8,33 @@ public class IntStackTester implements Chapter03 {
 
     private Scanner sc;
 
-    public IntStackTester(){
+    public IntStackTester() {
         sc = new Scanner(System.in);
     }
 
-    private void controller(){
+    private void controller() {
 
         IntStack stk = new IntStack(7);
 
-        while (true){
+        while (true) {
 
             System.out.printf("\n현재 데이터 수 : %d/%d\n", stk.size(), stk.capacity());
             System.out.print("(1) 푸시 (2) 팝 (3) 피크 (4) 덤프 (5) 검색 (6) 전체 삭제 "
-                            + "(7) 데이터 수 확인 (8) empty 여부 (9) 가득 찼는가 (0) 종료 : ");
+                    + "(7) 데이터 수 확인 (8) empty 여부 (9) 가득 찼는가 (0) 종료 : ");
             int menu = sc.nextInt();
 
-            if ( menu == 0 ) break;
+            if (menu == 0) break;
             int result = 0;
             boolean isResult = false;
 
-            switch (menu){
+            switch (menu) {
 
                 case 1:
                     System.out.print("입력 데이터: ");
                     result = sc.nextInt();
                     try {
                         stk.push(result);
-                    } catch (IntStack.OverFlowIntStackException e){
+                    } catch (IntStack.OverFlowIntStackException e) {
                         System.out.println("스택이 가득찼습니다.");
                     }
                     break;
@@ -43,7 +43,7 @@ public class IntStackTester implements Chapter03 {
                     try {
                         result = stk.pop();
                         System.out.printf("팝한 데이터: %d\n", result);
-                    } catch (IntStack.EmptyIntStackException e){
+                    } catch (IntStack.EmptyIntStackException e) {
                         System.out.println("스택이 비어있습니다.");
                     }
                     break;
@@ -52,7 +52,7 @@ public class IntStackTester implements Chapter03 {
                     try {
                         result = stk.peek();
                         System.out.printf("꼭대기 데이터: %d\n", result);
-                    } catch (IntStack.EmptyIntStackException e){
+                    } catch (IntStack.EmptyIntStackException e) {
                         System.out.println("스택이 비어있습니다.");
                     }
                     break;
@@ -60,7 +60,7 @@ public class IntStackTester implements Chapter03 {
                 case 4:
                     try {
                         stk.dump();
-                    } catch (IntStack.EmptyIntStackException e){
+                    } catch (IntStack.EmptyIntStackException e) {
                         System.out.println("스택이 비어있습니다.");
                     }
                     break;
@@ -73,7 +73,7 @@ public class IntStackTester implements Chapter03 {
                         if (result >= 0) System.out.printf("%d에 위치합니다.", result);
                         else System.out.println("값이 존재하지 않습니다.");
 
-                    } catch (IntStack.EmptyIntStackException e){
+                    } catch (IntStack.EmptyIntStackException e) {
                         System.out.println("스택이 비어있습니다.");
                     }
                     break;
@@ -82,7 +82,7 @@ public class IntStackTester implements Chapter03 {
                     try {
                         stk.clear();
                         System.out.println("데이터 클리어를 완료했습니다.");
-                    } catch (IntStack.EmptyIntStackException e){
+                    } catch (IntStack.EmptyIntStackException e) {
                         System.out.println("스택이 비어있습니다.");
                     }
                     break;
@@ -91,7 +91,7 @@ public class IntStackTester implements Chapter03 {
                     try {
                         result = stk.size();
                         System.out.printf("현 데이터 수: %d", result);
-                    } catch (IntStack.EmptyIntStackException e){
+                    } catch (IntStack.EmptyIntStackException e) {
                         System.out.println("데이터가 비어있습니다.");
                     }
                     break;

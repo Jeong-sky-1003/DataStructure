@@ -12,11 +12,11 @@ public class Function5622 implements BackJoon {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String input = reader.readLine();
 
-        int[] numbers = {   2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6,
-                            7, 7, 7, 7, 8, 8, 8, 9, 9, 9, 9 };
+        int[] numbers = {2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6,
+                7, 7, 7, 7, 8, 8, 8, 9, 9, 9, 9};
 
         int result = 0;
-        for (int i = 0; i < input.length(); i++ ){
+        for (int i = 0; i < input.length(); i++) {
             int index = (int) (input.charAt(i) - 'A');
             result = result + numbers[index] + 1;
         }

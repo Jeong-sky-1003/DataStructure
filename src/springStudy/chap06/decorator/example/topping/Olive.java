@@ -7,7 +7,7 @@ public class Olive extends CondimentDecorator {
 
     Pizza pizza;
 
-    public Olive(Pizza pizza){
+    public Olive(Pizza pizza) {
         super();
         this.pizza = pizza;
     }

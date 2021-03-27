@@ -8,7 +8,7 @@ public abstract class Pizza {
     public abstract int getPrice();
 
     // 메뉴 이름 받기
-    public String getMenu(){
+    public String getMenu() {
         return menu;
     }
 

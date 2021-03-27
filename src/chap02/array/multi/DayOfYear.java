@@ -2,16 +2,16 @@ package chap02.array.multi;
 
 import java.util.Scanner;
 
-public class DayOfYear implements MultiArray{
+public class DayOfYear implements MultiArray {
 
     private Scanner sc;
     private final static
-            int[][] days = {
-                            {31,28,31,30,31,30,31,31,30,31,30,31},
-                            {31,29,31,30,31,30,31,31,30,31,30,31}
-                            };
+    int[][] days = {
+            {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31},
+            {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}
+    };
 
-    public DayOfYear(){
+    public DayOfYear() {
         sc = new Scanner(System.in);
     }
 
@@ -42,18 +42,18 @@ public class DayOfYear implements MultiArray{
     }
 
     // 윤년 : 1 , 일반 : 0
-    private int monthOfDayChk(int year){
-        return ( year%4 == 0 && year%100 != 0 && year%400 == 0 ) ? 1 : 0;
+    private int monthOfDayChk(int year) {
+        return (year % 4 == 0 && year % 100 != 0 && year % 400 == 0) ? 1 : 0;
     }
 
     // 그 해 경과일수 구하기
-    private int dayOfYear(int year, int month, int day){
+    private int dayOfYear(int year, int month, int day) {
 
         int x = this.monthOfDayChk(year);
         int[] daysArray = days[x];
 
         int sum = 0;
-        for (int i = 0; i < month - 1; i++){
+        for (int i = 0; i < month - 1; i++) {
             sum = sum + daysArray[i];
         }
 

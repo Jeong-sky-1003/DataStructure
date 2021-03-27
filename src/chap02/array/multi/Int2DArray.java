@@ -1,6 +1,6 @@
 package chap02.array.multi;
 
-public class Int2DArray implements MultiArray{
+public class Int2DArray implements MultiArray {
 
     @Override
     public void start() {
@@ -12,9 +12,9 @@ public class Int2DArray implements MultiArray{
         x[1][2] = 40;
 
         // x는 int[]를 자료형으로 가지며
-        for (int[] elementX : x){
+        for (int[] elementX : x) {
             // elementX는 int를 자료형으로 가짐
-            for (int element : elementX){
+            for (int element : elementX) {
                 System.out.print(element + "\t");
             }
             System.out.println();

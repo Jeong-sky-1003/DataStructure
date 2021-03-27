@@ -8,12 +8,11 @@ public class TimeComplexity implements Chapter03 {
     public void start() {
 
 
-
     }
 
-    private int seqSearch(int[] a, int n, int key){
+    private int seqSearch(int[] a, int n, int key) {
 
-        for (int i = 0; i < n; i++){
+        for (int i = 0; i < n; i++) {
             if (a[i] == key) return i;
         }
 

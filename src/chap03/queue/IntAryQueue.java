@@ -7,40 +7,42 @@ public class IntAryQueue {
     private int[] que;  // 큐 본체
 
     // 생성자 : 초기화
-    public IntAryQueue(int capacity){
+    public IntAryQueue(int capacity) {
 
         this.max = capacity;
         this.num = 0;
 
-        try{
+        try {
             que = new int[max];
-        } catch (OutOfMemoryError e){
+        } catch (OutOfMemoryError e) {
             max = 0;
         }
 
     }
 
-    public static class EmptyQueueException extends RuntimeException{
-        public EmptyQueueException() {}
+    public static class EmptyQueueException extends RuntimeException {
+        public EmptyQueueException() {
+        }
     }
 
-    public static class OverFlowQueueException extends RuntimeException{
-        public OverFlowQueueException() {}
+    public static class OverFlowQueueException extends RuntimeException {
+        public OverFlowQueueException() {
+        }
     }
 
     // 인큐: 데이터 삽입 작업
-    public int enqueue(int x) throws OverFlowQueueException{
+    public int enqueue(int x) throws OverFlowQueueException {
         if (num >= max) throw new OverFlowQueueException();
         return que[num++] = x;
     }
 
     // 디큐: 데이터 꺼내는 작업
-    public int dequeue() throws EmptyQueueException{
+    public int dequeue() throws EmptyQueueException {
 
         if (num <= 0) throw new EmptyQueueException();
         int result = que[0];
 
-        for (int i = 0; i < num - 1; i++){
+        for (int i = 0; i < num - 1; i++) {
             que[i] = que[i + 1];
         }
         num--;
@@ -50,9 +52,9 @@ public class IntAryQueue {
     }
 
     // 덤프: 데이터 출력
-    public void dump() throws EmptyQueueException{
+    public void dump() throws EmptyQueueException {
         if (num <= 0) throw new EmptyQueueException();
-        for (int i = 0; i < num; i++){
+        for (int i = 0; i < num; i++) {
             System.out.print(que[i] + " ");
         }
         System.out.println();

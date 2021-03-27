@@ -17,18 +17,18 @@ public class EightQueen implements Chap04 {
     // 8퀸 문제를 만족하는 총 경우의 수
     private int count = 0;
 
-    private void print(){
+    private void print() {
         for (int e : pos)
             System.out.printf("%d  ", e);
         System.out.println();
 
     }
 
-    private void printSquare(){
+    private void printSquare() {
 
-        for (int i = 0; i < 8; i++){
-            for (int j = 0; j < 8; j++){
-                if (j == pos[i]){
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                if (j == pos[i]) {
                     // 조건으로 pos[i]로 한 이유는 pos의 값 구조를 생각하면 됨
                     System.out.printf("%4s", "◼︎︎");
                 }
@@ -40,18 +40,18 @@ public class EightQueen implements Chap04 {
 
     }
 
-    private void set(int column){
+    private void set(int column) {
 
-        for (int row = 0; row < 8; row++){
+        for (int row = 0; row < 8; row++) {
 
             // 대각선과 행, 열 위치에 값이 없을 경우 if문 진행
             if (
-                flag_row[row] == false &&
-                flag_arrayA[column + row] == false &&
-                flag_arrayB[column - row + 7] == false ){
+                    flag_row[row] == false &&
+                            flag_arrayA[column + row] == false &&
+                            flag_arrayB[column - row + 7] == false) {
 
                 pos[column] = row;
-                if (column == 7){
+                if (column == 7) {
                     // 모든 열에 퀸 위치를 할당하였기에 이 조건에서 count를 해주는 것이 바람직함
                     printSquare();
                     count++;

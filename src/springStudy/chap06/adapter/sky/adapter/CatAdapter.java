@@ -7,7 +7,7 @@ public class CatAdapter implements Animal {
 
     Animal cat;
 
-    public CatAdapter(Cat cat){
+    public CatAdapter(Cat cat) {
         this.cat = cat;
     }
 

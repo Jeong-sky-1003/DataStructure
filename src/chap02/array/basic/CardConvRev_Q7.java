@@ -11,11 +11,11 @@ public class CardConvRev_Q7 {
     private char[] result;
     private final static String DCHAR = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-    public CardConvRev_Q7(){
+    public CardConvRev_Q7() {
         sc = new Scanner(System.in);
     }
 
-    public void start(){
+    public void start() {
 
         index = 0;
         result = new char[30];
@@ -36,8 +36,8 @@ public class CardConvRev_Q7 {
 
         this.convRev(number, mod, result);
 
-        System.out.print( mod + "진수로 ");
-        for (int i = result.length - 1; i > -1; i--){
+        System.out.print(mod + "진수로 ");
+        for (int i = result.length - 1; i > -1; i--) {
             System.out.print(result[i]);
         }
 
@@ -45,7 +45,7 @@ public class CardConvRev_Q7 {
 
     }
 
-    private void convRev(int number, int mod, char[] array){
+    private void convRev(int number, int mod, char[] array) {
 
         System.out.printf("%d | %4d\n", mod, number);
 
@@ -60,10 +60,10 @@ public class CardConvRev_Q7 {
 
     }
 
-    private void print(int number, int calculate){
+    private void print(int number, int calculate) {
 
         System.out.println("  +-------");
-        if (number == 0){
+        if (number == 0) {
             System.out.printf("%8d   ... %d\n", number, calculate);
         } else {
             System.out.printf("%d | %4d   ... %d\n", mod, number, calculate);

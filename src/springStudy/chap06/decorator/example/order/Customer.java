@@ -10,9 +10,9 @@ import springStudy.chap06.decorator.example.topping.Olive;
 
 public class Customer implements MyStart {
 
-    private CondimentDecorator getTopping(int menu, Pizza pizza){
+    private CondimentDecorator getTopping(int menu, Pizza pizza) {
 
-        if (menu == 1){
+        if (menu == 1) {
             return new Olive(pizza);
         } else {
             return new CheeseCrust(pizza);
@@ -27,9 +27,9 @@ public class Customer implements MyStart {
         CondimentDecorator decorator = null;
 
         System.out.println("무엇을 주문하시겠습니까? (1) 치즈피자 (2) 페퍼로니 피자");
-        int menu  = sc.nextInt();
+        int menu = sc.nextInt();
 
-        switch (menu){
+        switch (menu) {
 
             case 1:
 
@@ -59,7 +59,7 @@ public class Customer implements MyStart {
         }
 
         if (decorator != null)
-            System.out.printf( "주문 메뉴: %s, 가격: %d", decorator.getMenu(), decorator.getPrice() );
+            System.out.printf("주문 메뉴: %s, 가격: %d", decorator.getMenu(), decorator.getPrice());
         else
             System.out.printf("주문 메뉴: %s, 가격: %d", pizza.getMenu(), pizza.getPrice());
 

@@ -8,7 +8,7 @@ public class MaxOfArray {
     private Scanner sc;
     private Random random = new Random();
 
-    public void start(){
+    public void start() {
 
         sc = new Scanner(System.in);
         //System.out.print("키의 최대값을 구합니다.\n사람수 : ");
@@ -26,11 +26,11 @@ public class MaxOfArray {
     /**
      * 난수로 배열 생성
      */
-    private int[] makeRanArray(int people){
+    private int[] makeRanArray(int people) {
 
         int[] array = new int[people];
 
-        for (int i = 0; i < people; i++){
+        for (int i = 0; i < people; i++) {
             array[i] = 100 + random.nextInt(90);
         }
 
@@ -41,11 +41,11 @@ public class MaxOfArray {
     /**
      * 배열 값 직접 입력
      */
-    private int[] makeArray(int people){
+    private int[] makeArray(int people) {
 
         int[] array = new int[people];
 
-        for (int i = 0; i < people; i++){
+        for (int i = 0; i < people; i++) {
             System.out.print("height[" + i + "]: ");
             array[i] = sc.nextInt();
         }
@@ -57,12 +57,12 @@ public class MaxOfArray {
     /**
      * 최대값 계산
      */
-    private void methodMax(int[] array){
+    private void methodMax(int[] array) {
 
         int max = array[0];
 
-        for(int element : array){
-            if(max < element) max = element;
+        for (int element : array) {
+            if (max < element) max = element;
         }
 
         System.out.println("max value: " + max);

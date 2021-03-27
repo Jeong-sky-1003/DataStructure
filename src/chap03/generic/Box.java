@@ -11,11 +11,11 @@ public class Box<T> {
     private T t;    // t type의 어떤 변수
 
     // 매개변수로 받은 t를 해당 클래스의 t에 할당
-    public void set(T t){
+    public void set(T t) {
         this.t = t;
     }
 
-    public T get(){
+    public T get() {
         return t;
     }
 

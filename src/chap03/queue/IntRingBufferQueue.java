@@ -8,44 +8,46 @@ public class IntRingBufferQueue {
     private int num;    // 현제 데이터 수
     private int[] que;
 
-    public IntRingBufferQueue(int capacity){
+    public IntRingBufferQueue(int capacity) {
 
         this.max = capacity;
         this.num = this.front = this.rear = 0;
 
-        try{
+        try {
             que = new int[max];
-        } catch (OutOfMemoryError e){
+        } catch (OutOfMemoryError e) {
             max = 0;
         }
 
     }
 
-    public static class EmptyRingBufferQueueException extends RuntimeException{
-        public EmptyRingBufferQueueException() {}
+    public static class EmptyRingBufferQueueException extends RuntimeException {
+        public EmptyRingBufferQueueException() {
+        }
     }
 
-    public static class OverFlowRingBufferQueueException extends RuntimeException{
-        public OverFlowRingBufferQueueException() {}
+    public static class OverFlowRingBufferQueueException extends RuntimeException {
+        public OverFlowRingBufferQueueException() {
+        }
     }
 
     // isFull: 꽉 찼는지 확인
-    public boolean isFull(){
+    public boolean isFull() {
         return (num >= max);
     }
 
     // isEmpty: 비었는지 확인
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return (num <= 0);
     }
 
     // size: 데이터 수 확인
-    public int size(){
+    public int size() {
         return num;
     }
 
     // capacity: 큐 용량 반환
-    public int capacity(){
+    public int capacity() {
         return max;
     }
 
@@ -55,17 +57,17 @@ public class IntRingBufferQueue {
     }
 
     // 피크: 맨 처음 데이터 들여다 보기
-    public int peek() throws EmptyRingBufferQueueException{
+    public int peek() throws EmptyRingBufferQueueException {
         if (num <= 0) throw new EmptyRingBufferQueueException();
         return que[front];
     }
 
     // indexOf: 큐에서 값 검색하기
-    public int indexOf(int x) throws EmptyRingBufferQueueException{
+    public int indexOf(int x) throws EmptyRingBufferQueueException {
 
         if (num <= 0) throw new EmptyRingBufferQueueException();
 
-        for (int i = 0; i < num; i++){
+        for (int i = 0; i < num; i++) {
             /*
                 i로만 활용할 경우 0번 부터 max-1 번호까지 순환되어 불필요한 동작이 증가함
                 이에 규칙을 찾아 적용한 것임
@@ -80,7 +82,7 @@ public class IntRingBufferQueue {
     }
 
     // 인큐: 값 삽입
-    public int enqueue(int x) throws OverFlowRingBufferQueueException{
+    public int enqueue(int x) throws OverFlowRingBufferQueueException {
 
         if (max <= num) throw new OverFlowRingBufferQueueException();
 
@@ -94,7 +96,7 @@ public class IntRingBufferQueue {
     }
 
     // 디큐: 값 꺼내기
-    public int dequeue() throws EmptyRingBufferQueueException{
+    public int dequeue() throws EmptyRingBufferQueueException {
 
         if (num <= 0) throw new EmptyRingBufferQueueException();
 
@@ -112,8 +114,8 @@ public class IntRingBufferQueue {
         if (num <= 0) {
             System.out.println("큐가 비어있습니다.");
         } else {
-            for (int i = 0; i < num; i++){
-                int index = ( i + front ) % max;
+            for (int i = 0; i < num; i++) {
+                int index = (i + front) % max;
                 System.out.print(que[index] + " ");
             }
 

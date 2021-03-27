@@ -10,13 +10,13 @@ public class OneDayEvent extends MyEvent {
 
     private MyDate date;
 
-    public OneDayEvent(String title, MyDate date){
+    public OneDayEvent(String title, MyDate date) {
         // super() method로 생성자에 접근
         super(title);
         this.date = date;
     }
 
-    public String toString(){
+    public String toString() {
         return title + ", " + date.toString();
     }
 

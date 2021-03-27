@@ -3,7 +3,7 @@ package chap02.classStructure;
 import java.util.Scanner;
 
 // 93 page - 연습문제 11번
-public class YMD implements ClassStructure{
+public class YMD implements ClassStructure {
 
     int y;
     int m;
@@ -13,16 +13,16 @@ public class YMD implements ClassStructure{
     private int dayListIndex;
 
     private final int[][] dayList = {
-                                    {31,28,31,30,31,30,31,31,30,31,30,31},  // 평년
-                                    {31,29,31,30,31,30,31,31,30,31,30,31},  // 윤년
-                                    };
+            {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31},  // 평년
+            {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31},  // 윤년
+    };
 
-    public YMD(){
+    public YMD() {
         sc = new Scanner(System.in);
     }
 
     // 생성자 1: 주어진 날짜로 설정
-    public YMD(int y, int m, int d){
+    public YMD(int y, int m, int d) {
         this.y = y;
         this.m = m;
         this.d = d;
@@ -30,17 +30,17 @@ public class YMD implements ClassStructure{
     }
 
     // 평년 윤년 체크
-    private int chkLeap(int y){
-        return ( (y%4 == 0) && (y%100 != 0) || (y%400 == 0) ) ? 1:0 ;
+    private int chkLeap(int y) {
+        return ((y % 4 == 0) && (y % 100 != 0) || (y % 400 == 0)) ? 1 : 0;
     }
 
     // 재귀함수 적용
     // 반복이 필요한 부분을 따로 분리해 재귀함수 적용
-    private YMD getAfterResult(int n){
+    private YMD getAfterResult(int n) {
 
         int tmp = dayList[dayListIndex][this.m - 1] - this.d;
 
-        if (n > tmp){
+        if (n > tmp) {
             n -= (tmp);
             this.m++;
             this.d = 0;
@@ -53,11 +53,11 @@ public class YMD implements ClassStructure{
 
     }
 
-    public YMD getAfter(int n){
+    public YMD getAfter(int n) {
 
         // 연 단위 판단으로 반복 횟수 감소 시킬 수 있음
-        if (n > 365){
-            this.y += (n/365);
+        if (n > 365) {
+            this.y += (n / 365);
             n %= 365;
             dayListIndex = this.chkLeap(this.y);
         }
@@ -127,17 +127,17 @@ public class YMD implements ClassStructure{
     }
 
     // 코드 작성 요함
-    private YMD getBeforeResult(int n){
+    private YMD getBeforeResult(int n) {
 
         return new YMD(this.y, this.m, this.d);
 
     }
 
-    public YMD getBefore(int n){
+    public YMD getBefore(int n) {
 
         // 먼저 n이 연단위인지 체크
-        if( n > 365){
-            this.y -= (n/365);
+        if (n > 365) {
+            this.y -= (n / 365);
             n %= 365;
             dayListIndex = this.chkLeap(this.y);
         }
@@ -148,10 +148,10 @@ public class YMD implements ClassStructure{
         this.d = this.d - n;
 
         // 마이너스로 계산이 됐다는 것은 한 달을 초과했다는 것.
-        if ( this.d < 0 ){
+        if (this.d < 0) {
 
             this.m -= 1;
-            if (this.m < 1){
+            if (this.m < 1) {
                 this.m = 12;
                 this.y--;
                 this.dayListIndex = this.chkLeap(this.y);
@@ -180,12 +180,12 @@ public class YMD implements ClassStructure{
         System.out.print("day: ");
         this.d = sc.nextInt();
 
-        YMD ymd = new YMD(y,m,d);
+        YMD ymd = new YMD(y, m, d);
 
         System.out.print("실행 계산 [1: after / 2: before] : ");
         int choose = sc.nextInt();
 
-        if (choose == 1){
+        if (choose == 1) {
             System.out.print("며칠 후를 알고 싶나요? ");
             choose = sc.nextInt();
             ymd = ymd.getAfter(choose);

@@ -4,12 +4,12 @@ import inflearn.Inflearn;
 
 public class Recursion4 implements Inflearn {
 
-    static class Maze{
+    static class Maze {
 
         static int n = 8;
 
         // 0: 길, 1: 벽
-        static int [][]maze = {
+        static int[][] maze = {
                 {0, 0, 0, 0, 0, 0, 0, 1},
                 {0, 1, 1, 0, 1, 1, 0, 1},
                 {0, 0, 0, 1, 0, 0, 0, 1},
@@ -30,18 +30,18 @@ public class Recursion4 implements Inflearn {
 
     // 위치 x, y로 부터 출구까지 가는 경로가 있는지를 판단
     // 좌표를 x, y로 받음
-    private boolean findMazePath(int x, int y, int n){
+    private boolean findMazePath(int x, int y, int n) {
 
         // 과정 체크하고 싶을 때 주석 해제하고 체크
         printMaze();
 
-        if ( x < 0 || y < 0 || x >= n || y >= n ){
+        if (x < 0 || y < 0 || x >= n || y >= n) {
             // 범위 밖으로 벗어난 경우
             return false;
-        } else if ( Maze.maze[x][y] != Maze.PATHWAY_COLOR ){
+        } else if (Maze.maze[x][y] != Maze.PATHWAY_COLOR) {
             // 현 위치가 지나갈 수 없거나 이미 지나갔던 길인 경우
             return false;
-        } else if ( x == n-1 && y == n-1 ){
+        } else if (x == n - 1 && y == n - 1) {
             // 출구인 경우
             Maze.maze[x][y] = Maze.PATH_COLOR;
             return true;
@@ -54,7 +54,7 @@ public class Recursion4 implements Inflearn {
             // 인접한 셀 접근하기
             // 단, 조건이 있음 상하좌우로 기존에 방문하지 않은 좌표에만 접근함
             // 위에 검사했다가 오른쪽으로 쭉 가다가 아래로 검사하고, 그 다음엔 거꾸로 (즉, 북동남서 순서)
-            if ( findMazePath(x - 1, y, n) || findMazePath(x, y + 1, n) ||
+            if (findMazePath(x - 1, y, n) || findMazePath(x, y + 1, n) ||
                     findMazePath(x + 1, y, n) || findMazePath(x, y - 1, n))
                 return true;
 
@@ -71,8 +71,8 @@ public class Recursion4 implements Inflearn {
 
     private void printMaze() {
 
-        for(int i=0; i < Maze.n; i++){
-            for (int j=0; j < Maze.n; j++){
+        for (int i = 0; i < Maze.n; i++) {
+            for (int j = 0; j < Maze.n; j++) {
                 System.out.printf("%2d", Maze.maze[i][j]);
             }
             System.out.println();
@@ -85,7 +85,7 @@ public class Recursion4 implements Inflearn {
     public void start() {
 
         printMaze();
-        findMazePath(0,0, Maze.n);  // 입구로 부터 시작
+        findMazePath(0, 0, Maze.n);  // 입구로 부터 시작
         printMaze();
 
     }
