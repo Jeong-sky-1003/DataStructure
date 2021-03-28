@@ -2,6 +2,7 @@ import baekjoon.BackJoon;
 import baekjoon.function.*;
 import baekjoon.stack.Function10773;
 import baekjoon.stack.Function10828;
+import baekjoon.stack.Function4949;
 import baekjoon.stack.Function9012;
 import caseStudy.MyStart;
 import inflearn.section2.Recursion7;
@@ -14,8 +15,9 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        MyStart myStart = new Function9012();
+        MyStart myStart = new Function4949();
         myStart.start();
+
 
     }   // main method
 
