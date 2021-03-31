@@ -3,6 +3,7 @@ import baekjoon.function.*;
 import baekjoon.stack.*;
 import caseStudy.MyStart;
 import inflearn.section2.Recursion7;
+import springStudy.chap04.staticBlock.Driver01;
 import springStudy.chap06.decorator.example.order.Customer;
 
 import java.io.*;
@@ -12,8 +13,10 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        MyStart myStart = new Function1874();
+        MyStart myStart = new Driver01();
         myStart.start();
+
+        System.out.println("main method");
 
 
     }   // main method
