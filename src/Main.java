@@ -5,6 +5,7 @@ import caseStudy.MyStart;
 import inflearn.section2.Recursion7;
 import springStudy.chap04.staticBlock.Driver01;
 import springStudy.chap06.decorator.example.order.Customer;
+import springStudy.chap06.singleton.example.Manage;
 
 import java.io.*;
 import java.util.*;
@@ -13,11 +14,8 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        MyStart myStart = new Driver01();
+        MyStart myStart = new Function10818();
         myStart.start();
-
-        System.out.println("main method");
-
 
     }   // main method
 
