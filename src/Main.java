@@ -1,6 +1,7 @@
 import baekjoon.BackJoon;
 import baekjoon.function.*;
 import baekjoon.stack.*;
+import barkingdog.chap01.Question1;
 import caseStudy.MyStart;
 import inflearn.section2.Recursion7;
 import springStudy.chap04.finalKeyword.Driver;
@@ -15,7 +16,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        MyStart myStart = new Driver();
+        MyStart myStart = new Question1();
         myStart.start();
 
     }   // main method
