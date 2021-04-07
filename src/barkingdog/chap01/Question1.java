@@ -63,7 +63,7 @@ public class Question1 implements MyStart {
 
     // 바킹독 코드: 26번 반복
     // 라이브러리를 사용하지 않고 계산해 메모리 차지가 훨씬 적음
-    // 시간복잡도는 O( log N ) 아닐까? 
+    // 시간복잡도는 O( log N ) 아닐까?
     private int func4_barkingdog(int n) {
         int var = 1;
         while (2*var <= n)  var *= 2;
