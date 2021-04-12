@@ -3,6 +3,8 @@ import baekjoon.array.BOJ10808;
 import baekjoon.function.*;
 import baekjoon.stack.*;
 import barkingdog.chap03.*;
+import barkingdog.chap07.Example01;
+import barkingdog.chap07.SolveBOJ;
 import caseStudy.MyStart;
 import inflearn.section2.Recursion7;
 import springStudy.chap04.finalKeyword.Driver;
@@ -17,7 +19,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        MyStart myStart = new BOJ3273();
+        MyStart myStart = new SolveBOJ();
         myStart.start();
 
     }   // main method
