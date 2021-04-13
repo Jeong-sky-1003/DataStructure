@@ -7,14 +7,59 @@ import java.io.InputStreamReader;
 import java.io.BufferedWriter;
 import java.io.OutputStreamWriter;
 
-import java.util.Deque;
-import java.util.ArrayDeque;
+import java.util.*;
 
 public class SolveBOJ implements MyStart {
 
     @Override
     public void start() throws Exception {
-        BOJ10866();
+        BOJ1021();
+    }
+
+    // BOJ 1021: 회전하는 큐
+    private void BOJ1021() throws Exception {
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String []inputs = reader.readLine().split(" ");
+
+        int result = 0;
+        int n = Integer.parseInt(inputs[0]);
+        int m = Integer.parseInt(inputs[1]);
+
+        inputs = reader.readLine().split(" ");
+
+        // deque는 LinkedList로 구현하는 것이 좋을듯 함
+        LinkedList<Integer> deque = new LinkedList<>();
+        for (int i=1; i <= n; i++)
+            deque.add(i);
+
+        for (int i=1; i <= m; i++) {
+
+            int num = Integer.parseInt(inputs[i-1]);
+            int index = deque.indexOf(num);
+
+            int mid = deque.size() % 2;
+            if (mid == 0) mid = deque.size()/2 - 1;
+            else mid = (deque.size()/2);
+
+            if ( index <= mid ) {
+                while ( deque.peekFirst() != num ) {
+                    result++;
+                    deque.addLast(deque.pollFirst());
+                }
+            } else {
+                while ( deque.peekFirst() != num ) {
+                    result++;
+                    deque.addFirst(deque.pollLast());
+                }
+            }
+
+            deque.pollFirst();
+
+        }
+
+        System.out.println(result);
+
     }
 
     // BOJ 10866: 덱 (제한시간 0.5초)
