@@ -13,7 +13,151 @@ public class SolveBOJ implements MyStart {
 
     @Override
     public void start() throws Exception {
-        BOJ1021();
+        Stack<Character> stk = new Stack<>();
+        int index = stk.search('e');
+
+        String t = "eeeeee";
+        System.out.println(t.contains("e"));
+
+        int in = t.indexOf("e");
+        t = t.substring(0, in) + t.substring(in+1);
+
+        System.out.println(in);
+        System.out.println(t);
+        System.out.println(t.length());
+        System.out.println("------------");
+
+        List<String> tt = new ArrayList<>();
+        tt.add("e");
+        System.out.println(tt.get(0));
+        tt.remove("e");
+        for (String e:tt)
+            System.out.println(e);
+
+        BOJ5430_2();
+    }
+
+    private void BOJ5430_2() throws Exception {
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int num = Integer.parseInt(reader.readLine());
+        StringBuilder result = new StringBuilder();
+
+        for (int i=0; i < num; i++) {
+
+            Deque<Integer> deq = new LinkedList<>();
+
+            String function = reader.readLine();
+            int arrNum = Integer.parseInt(reader.readLine());
+
+            String inputs = reader.readLine();
+            inputs = inputs.substring(1, inputs.length()-1);
+            String []nums = inputs.split(",");
+
+            if (arrNum > 0) {
+                for (int j = 0; j < arrNum; j++)
+                    deq.addLast(Integer.parseInt(nums[j]));
+            }
+
+            result.append(AC(deq, function)).append("\n");
+
+        }
+
+        System.out.println(result);
+
+    }
+
+    private String AC(Deque<Integer> deq, String function) {
+
+        boolean reverse = false;
+        StringBuilder builder = new StringBuilder();
+        for (int i=0; i < function.length(); i++) {
+
+            if (function.charAt(i) == 'R')
+                reverse = !reverse;
+            else {
+                if (deq.isEmpty())
+                    return "error";
+                if (reverse) deq.pollLast();
+                else deq.pollFirst();
+            }
+
+        }
+
+        builder.append("[");
+        while (!deq.isEmpty()) {
+
+            if (reverse) builder.append(deq.pollLast());
+            else builder.append(deq.pollFirst());
+
+            if (deq.size() > 0) builder.append(",");
+
+        }
+        builder.append("]");
+        return builder.toString();
+
+    }
+
+    // BOJ 5430: AC
+    private void BOJ5430() throws Exception {
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder builder = new StringBuilder();
+        int t = Integer.parseInt(reader.readLine());
+
+        for (int i=0; i < t; i++) {
+
+            String function = reader.readLine();
+            LinkedList<Integer> numbers = new LinkedList<>();
+
+            boolean reverseChk = false;
+            int num = Integer.parseInt(reader.readLine());
+
+            String nums = reader.readLine();
+            nums = nums.substring(1, nums.length()-1);
+            String[] arr = nums.split(",");
+
+            boolean chk = true;
+            if (num > 0) {
+                for (int k=0; k < num; k++)
+                    numbers.addLast(Integer.parseInt(arr[k]));
+            }
+
+            for (int j=0; j < function.length(); j++){
+                if (function.charAt(j) == 'R')
+                    reverseChk = !reverseChk;
+                else {
+                    if (numbers.isEmpty()){
+                        chk = false;
+                        break;
+                    }
+                    if (reverseChk)
+                        numbers.pollLast();
+                    else
+                        numbers.pollFirst();
+                }
+            }
+
+            if(chk) {
+                builder.append("[");
+                if (reverseChk) {
+                    builder.append(numbers.pollLast());
+                    while (!numbers.isEmpty())
+                        builder.append(",").append(numbers.pollLast());
+                    builder.append("]");
+                } else {
+                    builder.append(numbers.pollFirst());
+                    while (numbers.size() > 1)
+                        builder.append(",").append(numbers.pollFirst());
+                    builder.append("]");
+                }
+            } else {
+                builder.append("error");
+            }
+            builder.append("\n");
+        }
+        System.out.println(builder);
+
     }
 
     // BOJ 1021: 회전하는 큐

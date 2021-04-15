@@ -19,10 +19,47 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        MyStart myStart = new SolveBOJ();
-        myStart.start();
+//        MyStart start = new SolveBOJ();
+//        start.start();
+
+        String []tt = {"cook","lock","cool"};
+        List<String> t = commonChars(tt);
+
+        for (String e:t)
+            System.out.println(e);
 
     }   // main method
+
+    public static List<String> commonChars(String[] A) {
+
+
+        List<String> result = new ArrayList<>();
+
+        for(int i=0; i < A.length; i++) {
+
+            String tmp = A[i];
+            if (i == 0){
+                for(char e:tmp.toCharArray())
+                    result.add(String.valueOf(e));
+            } else {
+
+                for (int j=0; j < result.size(); j++) {
+                    if ( !tmp.contains(result.get(j)) )
+                        result.remove(result.get(j));
+                    else {
+                        int in = tmp.indexOf(result.get(j));
+                        tmp = tmp.substring(0, in) + tmp.substring(in+1);
+                    }
+                }
+
+            }
+
+
+        }
+
+        return result;
+
+    }
 
     static class ContentsInfo {
 
