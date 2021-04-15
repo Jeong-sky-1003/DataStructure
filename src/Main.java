@@ -3,8 +3,8 @@ import baekjoon.array.BOJ10808;
 import baekjoon.function.*;
 import baekjoon.stack.*;
 import barkingdog.chap03.*;
-import barkingdog.chap07.Example01;
 import barkingdog.chap07.SolveBOJ;
+import barkingdog.chap08.Example01;
 import caseStudy.MyStart;
 import inflearn.section2.Recursion7;
 import springStudy.chap04.finalKeyword.Driver;
@@ -19,19 +19,19 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-//        MyStart start = new SolveBOJ();
-//        start.start();
+        MyStart start = new Example01();
+        start.start();
 
-        String []tt = {"cook","lock","cool"};
-        List<String> t = commonChars(tt);
-
-        for (String e:t)
-            System.out.println(e);
+//        String []tt = {"cook","lock","cool"};
+//        List<String> t = commonChars(tt);
+//
+//        for (String e:t)
+//            System.out.println(e);
 
     }   // main method
 
+    // slack 문제 다시 풀어보기
     public static List<String> commonChars(String[] A) {
-
 
         List<String> result = new ArrayList<>();
 
