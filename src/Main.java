@@ -4,7 +4,7 @@ import baekjoon.function.*;
 import baekjoon.stack.*;
 import barkingdog.chap03.*;
 import barkingdog.chap07.SolveBOJ;
-import barkingdog.chap08.Example01;
+import barkingdog.chap09.*;
 import caseStudy.MyStart;
 import inflearn.section2.Recursion7;
 import springStudy.chap04.finalKeyword.Driver;
@@ -19,7 +19,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        MyStart start = new Example01();
+        MyStart start = new BOJ1926();
         start.start();
 
 //        String []tt = {"cook","lock","cool"};

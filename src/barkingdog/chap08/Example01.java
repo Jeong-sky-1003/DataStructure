@@ -8,77 +8,103 @@ import java.util.Stack;
 
 public class Example01 implements MyStart {
 
+
+    private static Stack<String> stk = new Stack<>();
+
     @Override
     public void start() throws Exception {
         BOJ2504();
+    }
+
+    // https://github.com/hotehrud/acmicpc/blob/master/algorithm/stack/2504.java
+    // c1은 짝이 맞지 않는 경우이며, c2는 짝이 맞는 경우로
+    // 이는 메서드를 호출하는 곳에셔 매게변수로 넘겨줌
+    private int calLoop(Stack<String> stk, String c1, String c2, int val) throws Exception{
+
+        int result = 0;
+        while (!stk.isEmpty()) {
+            String pop = stk.peek();
+            // 예외처리. 괄호가 맞지 않는 경우
+            if (pop.equals(c1)) return -1;
+            else if (pop.equals(c2)) {
+                stk.pop();
+                result *= val;
+                stk.push(String.valueOf(result));
+                break;
+            } else {
+                int num = Integer.parseInt(stk.pop());
+                result += num;
+            }
+        }
+
+        return result;
+
     }
 
     private void BOJ2504() throws Exception {
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String input = reader.readLine();
-        Stack<Character> stk = new Stack<>();
-        Stack<Integer> nums = new Stack<>();
 
+        int chk = 0;
         int result = 0;
-        input = input.replace("()", "2");
-        input = input.replace("[]", "3");
-        System.out.println(input);
 
         for (int i=0; i < input.length(); i++) {
 
-            if (input.charAt(i) == '(' || input.charAt(i) == '[') {
-                stk.push(input.charAt(i));
+            if (chk == -1) {
+                result = 0;
+                break;
+            }
+
+            String str = String.valueOf(input.charAt(i));
+
+            if (str.equals("(") || str.equals("[")) {
+                stk.push(str);
             } else {
 
-                if (input.charAt(i) == ')') {
+                if (str.equals(")") ) {
 
-                    if (stk.peek() == '(') {
-
-                        if ( stk.size() > 1 ) {
-                            nums.push(nums.pop() * 2);
-                            stk.pop();
-                        } else {
-                            stk.pop();
-                            int tmp = 0;
-                            while ( !nums.isEmpty() )
-                                tmp += nums.pop();
-                            System.out.println( result + ", " + tmp);
-                            result = result + (tmp * 2);
-                        }
-
+                    if (stk.isEmpty()) {
+                        chk = -1;
+                        result = 0;
+                        break;
                     }
 
-                } else if (input.charAt(i) == ']') {
-
-                    if (stk.peek() == '[') {
-
-                        if ( stk.size() > 1 ) {
-                            nums.push(nums.pop() * 3);
-                            stk.pop();
-                        } else {
-                            stk.pop();
-                            int tmp = 0;
-                            while ( !nums.isEmpty() )
-                                tmp += nums.pop();
-                            System.out.println( result + ", " + tmp);
-                            result = result + (tmp * 3);
-                        }
-
+                    if (stk.peek().equals("(")) {
+                        stk.pop();
+                        stk.push("2");
+                    } else {
+                        // 만약 스택의 top 값이 숫자인 경우
+                        chk = calLoop(stk, "[", "(", 2);
                     }
 
+                } else if (str.equals("]")) {
 
-                } else {
-                    int num = input.charAt(i) - '0';
-                    if ( stk.isEmpty() ) result += num;
-                    else nums.push(num);
+                    if (stk.isEmpty()) {
+                        chk = -1;
+                        result = 0;
+                        break;
+                    }
+
+                    if (stk.peek().equals("[")) {
+                        stk.pop();
+                        stk.push("3");
+                     } else {
+                        // 만약 스택의 top 값이 숫자일 경우인듯함
+                        chk = calLoop(stk, "(", "[", 3);
+                    }
+
                 }
 
             }
-            System.out.println(stk);
-            System.out.println(nums);
-            System.out.println("result: " + result);
 
+        }
+
+        if (chk >= 0) {
+            while (!stk.isEmpty()) {
+                int num = Integer.parseInt(stk.pop());
+                result += num;
+            }
         }
 
         System.out.println(result);
