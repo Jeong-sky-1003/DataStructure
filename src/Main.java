@@ -19,7 +19,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        MyStart start = new BOJ7576();
+        MyStart start = new BOJ4179();
         start.start();
 
 //        String []tt = {"cook","lock","cool"};
