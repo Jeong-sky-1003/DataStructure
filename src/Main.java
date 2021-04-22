@@ -6,7 +6,9 @@ import barkingdog.chap03.*;
 import barkingdog.chap07.SolveBOJ;
 import barkingdog.chap09.*;
 import barkingdog.chap09.boj.BOJ1012;
+import barkingdog.chap09.boj.BOJ2583;
 import barkingdog.chap09.boj.BOJ7569;
+import barkingdog.chap09.boj.BOJ9466;
 import caseStudy.MyStart;
 import inflearn.section2.Recursion7;
 import springStudy.chap04.finalKeyword.Driver;
@@ -21,7 +23,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        MyStart start = new BOJ7569();
+        MyStart start = new BOJ2583();
         start.start();
 
 //        String []tt = {"cook","lock","cool"};
