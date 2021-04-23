@@ -2,6 +2,9 @@ import baekjoon.BackJoon;
 import baekjoon.array.BOJ10808;
 import baekjoon.function.*;
 import baekjoon.stack.*;
+import barkingdog.boj.bfs.BOJ10026;
+import barkingdog.boj.bfs.BOJ2667;
+import barkingdog.boj.bfs.BOJ7562;
 import barkingdog.chap03.*;
 import barkingdog.chap07.SolveBOJ;
 import barkingdog.chap09.*;
@@ -23,7 +26,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        MyStart start = new BOJ2583();
+        MyStart start = new BOJ10026();
         start.start();
 
 //        String []tt = {"cook","lock","cool"};

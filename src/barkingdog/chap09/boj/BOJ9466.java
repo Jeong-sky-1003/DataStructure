@@ -35,8 +35,12 @@ public class BOJ9466 implements MyStart {
                 students[j+1] = num;
             }
 
-            writer.append(BFS(students, student) + "\n");
-            System.out.println();
+            int result = 0;
+            int []arr = BFS(students, student);
+            for (int j=1; j <= student; j++) {
+                if (arr[j] <= 0) result++;
+            }
+            writer.append(result + "\n");
 
         }
 
@@ -46,45 +50,62 @@ public class BOJ9466 implements MyStart {
 
     }
 
-    int BFS(int[] students, int num) throws Exception{
+    int[] BFS(int[] students, int num) throws Exception{
 
-        int count = 0;
+        Queue<Integer> s_que = new LinkedList<>();
+        Stack<Integer> i_stk = new Stack<>();
+        int []arr = new int[num+1];
 
         for (int i=1; i <= num; i++) {
 
-            Stack<Integer> point_stk = new Stack<>();
-            Queue<Integer> stu_que = new LinkedList<>();
+            // 1
+            s_que.add(i);
+            // 3
+            i_stk.push(students[i]);
+//            System.out.println(s_que);
 
-            int tmp = i;
-            int index = students[i];
-            while (true) {
+            while ( !i_stk.isEmpty() ) {
 
-                System.out.println("---------------------");
-                stu_que.add(tmp);
-                point_stk.push(index);
+                // 3
+                int number = i_stk.pop();
 
-                if (tmp == index && point_stk.peek() != stu_que.peek()) {
-                    System.out.println("count point");
-                    count++;
-                    break;
+                if ( arr[number] == 0 ) {
+                    arr[number] = 1;
+                    s_que.add(number);
+                    i_stk.push(students[number]);
+                } else {
+
+                    if (arr[number] == 1 && arr[s_que.peek()] == 1) {
+                        s_que.clear();
+                        i_stk.clear();
+                        break;
+                    } else if ( arr[number] == -1 ) {
+                        arr[s_que.poll()] = -1;
+                        s_que.clear();
+                        i_stk.clear();
+                        break;
+                    } else if ( s_que.peek() != number ) {
+                        arr[s_que.poll()] = -1;
+                        s_que.clear();
+                        i_stk.clear();
+                        break;
+                    }
+
                 }
 
-                if ( (index != tmp && point_stk.peek() == stu_que.peek()) || (tmp == index) ) {
-                    break;
-                }
-
-                tmp = index;
-                index = students[index];
-                System.out.println(stu_que);
-                System.out.println(point_stk);
-
-                Thread.sleep(8000);
+//                for (int j=1; j <= num; j++)
+//                    System.out.printf("%2d", arr[j]);
+//                System.out.println();
 
             }
 
+//            for (int j=1; j <= num; j++)
+//                System.out.printf("%2d", arr[j]);
+//            System.out.println();
+
         }
 
-        return count;
+        return arr;
 
     }
 
