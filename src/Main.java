@@ -7,7 +7,7 @@ import barkingdog.boj.bfs.BOJ2667;
 import barkingdog.boj.bfs.BOJ7562;
 import barkingdog.chap03.*;
 import barkingdog.chap07.SolveBOJ;
-import barkingdog.chap09.*;
+import barkingdog.chap0B.*;
 import barkingdog.chap09.boj.BOJ1012;
 import barkingdog.chap09.boj.BOJ2583;
 import barkingdog.chap09.boj.BOJ7569;
@@ -26,7 +26,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        MyStart start = new BOJ10026();
+        MyStart start = new BOJ17478();
         start.start();
 
 //        String []tt = {"cook","lock","cool"};
